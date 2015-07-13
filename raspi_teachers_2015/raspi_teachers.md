@@ -89,6 +89,7 @@ If you need help on how/why to use a command the best thing to do is to google i
 # Introduction to Github and other websites of interest.
 
 *  [Github](https://github.com/): Github is a way to code collaboratively, or to find code to jumpstart your project.
+Github + Jekyll + Markdown is also an easy way to set up a website for your projects. 
 
 
 To clone a repository:
@@ -127,6 +128,13 @@ git pull
 git push
 
 ```
+
+Other important websites:
+*  Thingiverse has lots of patterns to 3D print [here](https://www.thingiverse.com/)
+*  Raspberry Pis are computers but Arduino microcontrollers are also very useful for projects [here](https://www.arduino.cc/)
+*  OpenScad is a free program to design 3D objects [here](http://www.openscad.org/)
+*  More info on github pages [here](https://pages.github.com/)
+*  Jekyll is a tool to help develop your website with Github [here](https://help.github.com/articles/using-jekyll-with-pages/)
 
 # Using the Raspberry Pi camera
 
