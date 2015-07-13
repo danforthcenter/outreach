@@ -351,3 +351,26 @@ ls -l /home/pi/yourname/
 
 ```
 
+# Introduction to Raspberry Pi Sensors
+
+There are numerous sensors that are available for Raspberry Pi computers and also for Arduino microcontrollers.
+
+*  Adafruit has a nice selection of sensors and tutorials [here](http://www.adafruit.com/category/35)
+*  The best way to find out how to use a sensor is to google it and find online tutorials.
+
+# Connecting a sensor to a Google doc
+
+**More here from Noah**
+
+# Introduction to Scratch
+
+**More here from Meter**
+
+# Tech Trunk Discussion Notes
+
+* Moderated by Terry
+
+# Module planning notes
+
+* Moderated by Terry
+
