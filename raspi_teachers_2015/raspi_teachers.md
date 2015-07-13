@@ -264,7 +264,7 @@ Crontab file format:
 add the following line to the cron file (you should see a list of commands that also start with an astericks).
 
 ```
-#this tells the command to run every min of every hour every day of the month every day of the week.
+#this tells the command to run every 10 min of every hour every day of the month every day of the week.
 
 */10 * * * * pi /usr/bin/raspistill -o /home/pi/timelapse2/$(date +"\%Y-\%m-\%d_\%H:\%M:\%S")_timelapse.jpg
 
