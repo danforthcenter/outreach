@@ -368,9 +368,9 @@ There are numerous sensors that are available for Raspberry Pi computers and als
 
 # Tech Trunk Discussion Notes
 
-* Moderated by Terry
+**Moderated by Terry**
 
 # Module planning notes
 
-* Moderated by Terry
+**Moderated by Terry**
 
