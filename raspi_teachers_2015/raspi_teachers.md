@@ -140,7 +140,7 @@ Other important websites:
 
 Soldering is basically like metal glue. We will be soldering a small IR light panel so that we can take images at night.
 
-More on how to solder [here](https://learn.adafruit.com/adafruit-guide-excellent-soldering/tools)
+*  More on how to solder [here](https://learn.adafruit.com/adafruit-guide-excellent-soldering/tools)
 
 
 # Using the Raspberry Pi camera
