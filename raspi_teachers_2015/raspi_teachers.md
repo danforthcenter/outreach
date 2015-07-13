@@ -86,6 +86,48 @@ If you need help on how/why to use a command the best thing to do is to google i
 **exit** - log out of the current session
 
 
+# Introduction to Github and other websites of interest.
+
+*  [Github](https://github.com/): Github is a way to code collaboratively, or to find code to jumpstart your project.
+
+
+To clone a repository:
+
+
+Four steps add data to a repository (that you have permissions to):
+1)  To add data to a repository: (make sure you are in right folder)
+
+```
+# the . means to add all
+# instead of adding all you can add specific files
+git add .
+
+```
+2)  To commit data to a repository:
+
+```
+# commit the additions to the repository
+# minimally needs a metadata message
+git commit -m "adding new data to this repository"
+
+```
+
+3)  Pull the repository so that you make sure you are adding data to the newest version of the repository.
+
+```
+# make sure your version of the files are up to date before you try to add new things to the repository
+git pull
+
+```
+
+4)  Push your data to the repository.
+
+```
+# push your new data to the repository
+git push
+
+```
+
 # Using the Raspberry Pi camera
 
 The Raspberry Pi camera module is a 5 megapixel, fixed-focus camera add-on for the Raspberry Pi. Each of your Raspberry Pi computers has a camera module installed. Your camera module is the Pi NoIR model (the infrared filter has been removed).
