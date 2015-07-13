@@ -134,7 +134,14 @@ Other important websites:
 *  Raspberry Pis are computers but Arduino microcontrollers are also very useful for projects [here](https://www.arduino.cc/)
 *  OpenScad is a free program to design 3D objects [here](http://www.openscad.org/)
 *  More info on github pages [here](https://pages.github.com/)
-*  Jekyll is a tool to help develop your website with Github [here](https://help.github.com/articles/using-jekyll-with-pages/)
+*  Jekyll is a tool to help develop your website with Github [here](https://help.github.com/articles/using-jekyll-with-pages/)  
+
+# Introduction to Soldering
+
+Soldering is basically like metal glue. We will be soldering a small IR light panel so that we can take images at night.
+
+More on how to solder [here](https://learn.adafruit.com/adafruit-guide-excellent-soldering/tools)
+
 
 # Using the Raspberry Pi camera
 
