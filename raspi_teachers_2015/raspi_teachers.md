@@ -266,7 +266,7 @@ add the following line to the cron file (you should see a list of commands that 
 ```
 #this tells the command to run every min of every hour every day of the month every day of the week.
 
-*/1 * * * * pi /usr/bin/raspistill -o /home/pi/timelapse2/$(date +"\%Y-\%m-\%d_\%H:\%M:\%S")_timelapse.jpg
+*/10 * * * * pi /usr/bin/raspistill -o /home/pi/timelapse2/$(date +"\%Y-\%m-\%d_\%H:\%M:\%S")_timelapse.jpg
 
 #save the file and close it
 
@@ -300,6 +300,7 @@ cd /home/pi/timelapse2/
 
 ls *.jpg > stills.txt
 
+#If you only wanted to use every other image (we won't be doing this)
 awk 'NR%2==0' stills.txt > stills_even.txt
 
 ```  
@@ -349,6 +350,4 @@ mv /home/pi/images/timelapse2/timelapse.mp4 /home/pi/yourname/timelapse.mp4
 ls -l /home/pi/yourname/
 
 ```
-
-#Browse all the images you have taken and pick your favorite one. Move that image to the folder with your name and we'll get it printed.
 
