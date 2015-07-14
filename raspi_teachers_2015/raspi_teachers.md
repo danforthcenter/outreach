@@ -9,7 +9,7 @@
     *  [https://learn.adafruit.com/category/raspberry-pi](https://learn.adafruit.com/category/raspberry-pi)
     *  [http://www.raspberrypitutorials.yolasite.com/](http://www.raspberrypitutorials.yolasite.com/)
 
-#Putting the Operating System (OS) on the Raspberry Pi
+##Putting the Operating System (OS) on the Raspberry Pi
 In this session we will learn to work with Raspberry Pi computers and later the Raspberry Pi camera module. Raspberry Pi computers are small, single-board computers that cost between $20-35.
 The Raspberry Pi computers you will work with today are Pi 2 Model B ($35, 4-core ARM CPU, 1GB RAM) [Link](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/).
 Our Raspberry Pis are running a Linux operating system "Raspbian" which is a fork of Debian 7 "Wheezy." The operating system is on the microSD card in your Pi. We've 'flashed' the cards for you
@@ -136,7 +136,7 @@ Other important websites:
 *  More info on github pages [here](https://pages.github.com/)
 *  Jekyll is a tool to help develop your website with Github [here](https://help.github.com/articles/using-jekyll-with-pages/)
 
-#Pi passwords and backing up files
+##Pi passwords and backing up files
 
 **More from Noah**
 
@@ -373,7 +373,7 @@ How to make your Raspberry pi more 'rugged'
 *  See post on 5 different cases [here](http://www.makeuseof.com/tag/5-ways-to-ruggedise-your-raspberry-pi/)
 *  This Rustoleum coating might work [here](http://www.geek.com/chips/neverwet-makes-the-raspberry-pi-and-other-gadgets-waterproof-1564340/)
 
-# Connecting a sensor to a Google doc
+##Connecting a sensor to a Google doc
 
 **More here from Noah**
 
@@ -615,17 +615,17 @@ sv.model.plot = ggplot(st.data,aes(x=sv_area/1e5, y=fresh_weight)) +
 print(sv.model.plot)
 ```
 
-# Introduction to Scratch
+##Introduction to Scratch
 
 **More here from Meter**
 
-# Tech Trunk Discussion Notes
+##Tech Trunk Discussion Notes
 
 **Moderated by Terry**
 
 **Notes:**
 
-# Module planning notes
+##Module planning notes
 
 **Moderated by Terry**
 
