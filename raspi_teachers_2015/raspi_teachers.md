@@ -363,11 +363,10 @@ There are numerous sensors that are available for Raspberry Pi computers and als
 *  Adafruit has a nice selection of sensors and tutorials [here](http://www.adafruit.com/category/35)
 *  The best way to find out how to use a sensor is to google it and find online tutorials.
 
-We will be using four different 'sensor' modules today
+We will be using four different 'sensor' modules today  
 1)  Light panel: Bright Pi, more information [here](https://github.com/danforthcenter/outreach/tree/master/raspi_teachers_2015/Bright%20Pi%20assembly%20instructions)  
-2)  Solar panel: Assembly instructions [here](https://blog.adafruit.com/2014/06/20/how-to-build-a-solar-powered-raspberry-pi-piday-raspberrypi-raspberry_pi/)  
-3)  Temperature sensor: More information [here](https://www.adafruit.com/product/1893)  
-4)  Light sensor: More information [here](https://www.adafruit.com/products/439)
+2)  Temperature sensor: More information [here](https://www.adafruit.com/product/1893)  
+3)  Light sensor: More information [here](https://www.adafruit.com/products/439)
 
 How to make your Raspberry pi more 'rugged'
 *  Weather proofing in a coffee can by Jim at fotosyn [here](http://www.fotosyn.com/simple-timelapse-camera-using-raspberry-pi-and-a-coffee-tin/)
