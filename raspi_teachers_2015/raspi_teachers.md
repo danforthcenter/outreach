@@ -326,9 +326,9 @@ mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:aspect=16/9:vbitrate=8000000 
 
 ```
 
-To see your videos we will add them to a playlist here
+To see your videos we will also add them to a playlist here
 
-[playlist link](https://www.youtube.com/playlist?list=PLimbrUa_ArHwSIwb2BaugnaN-TBRzpRmu)
+[playlist link](https://www.youtube.com/playlist?list=PLimbrUa_ArHwJ9n_HL_IQsU0pAGpnxtPD)
 
 #Now let's move your movie to a folder with your name
 
@@ -374,7 +374,9 @@ How to make your Raspberry pi more 'rugged'
 *  See post on 5 different cases [here](http://www.makeuseof.com/tag/5-ways-to-ruggedise-your-raspberry-pi/)
 *  This Rustoleum coating might work [here](http://www.geek.com/chips/neverwet-makes-the-raspberry-pi-and-other-gadgets-waterproof-1564340/)  
 
-# Opensource tools for image analysis  
+# Opensource tools for image analysis
+
+Collecting time lapse images are great for demonstrating concepts of plant growth, plant movement, and circadian rhythms.
 
 **More here**
 
