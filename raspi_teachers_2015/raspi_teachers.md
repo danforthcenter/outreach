@@ -15,11 +15,11 @@ The Raspberry Pi computers you will work with today are Pi 2 Model B ($35, 4-cor
 Our Raspberry Pis are running a Linux operating system "Raspbian" which is a fork of Debian 7 "Wheezy." The operating system is on the microSD card in your Pi. We've 'flashed' the cards for you
 but if you want to do one yourself you can download the operating system from the [Raspberry Pi website](https://www.raspberrypi.org/downloads/). For Mac users we recommend using the free program
 ApplePi-Baker that is available [here](http://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/) putting a disk image on a card, scroll down to download the **non-sudo version**.
-For Windows users options for flashing cards can be found [here](http://www.tweaking4all.com/hardware/raspberry-pi/install-img-to-sd-card/#windows).  
+For Windows users, options for flashing cards can be found [here](http://www.tweaking4all.com/hardware/raspberry-pi/install-img-to-sd-card/#windows).  
 
 ##Next we will set up the Raspberry Pi configurations
 
-For more information see the [Raspberry Pi Github Page](/github.com/raspberrypi/documentation/blob/master/configuration/README.md). There will be more on using github later.
+For more information see the [Raspberry Pi Github Page](/github.com/raspberrypi/documentation/blob/master/configuration/README.md). There will be more on using GitHub later.
 
 
 In addition to the command-line interface, Raspberry Pi computers can run a desktop environment. To start it type after logging in:
