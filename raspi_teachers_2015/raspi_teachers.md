@@ -372,7 +372,11 @@ We will be using four different 'sensor' modules today
 How to make your Raspberry pi more 'rugged'
 *  Weather proofing in a coffee can by Jim at fotosyn [here](http://www.fotosyn.com/simple-timelapse-camera-using-raspberry-pi-and-a-coffee-tin/)
 *  See post on 5 different cases [here](http://www.makeuseof.com/tag/5-ways-to-ruggedise-your-raspberry-pi/)
-*  This Rustoleum coating might work [here](http://www.geek.com/chips/neverwet-makes-the-raspberry-pi-and-other-gadgets-waterproof-1564340/)  
+*  This Rustoleum coating might work [here](http://www.geek.com/chips/neverwet-makes-the-raspberry-pi-and-other-gadgets-waterproof-1564340/)
+
+# Connecting a sensor to a Google doc
+
+**More here from Noah**
 
 # Opensource tools for image analysis
 
@@ -611,11 +615,6 @@ sv.model.plot = ggplot(st.data,aes(x=sv_area/1e5, y=fresh_weight)) +
                              axis.title.y=element_text(face="bold"))
 print(sv.model.plot)
 ```
-
-
-# Connecting a sensor to a Google doc
-
-**More here from Noah**
 
 # Introduction to Scratch
 
