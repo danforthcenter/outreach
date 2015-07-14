@@ -104,12 +104,13 @@ We won't be doing this today, but you can also add data to a repository if you'v
 Four steps add data to a repository (that you have permissions to you can also do a 'pull' request that is asking for permission to push):
 1)  To add data to a repository: (make sure you are in right folder)
 
-```bash
+```
 # the . means to add all
 # instead of adding all you can add specific files
 git add .
 
 ```
+
 2)  To commit data to a repository:
 
 ```
