@@ -120,7 +120,7 @@ git commit -m "adding new data to this repository"
 
 ```
 
-3)  Pull the repository so that you make sure you are adding data to the newest version of the repository.
+3)  Pull the repository to merge your committed changes with the newest version of the repository.
 
 ```
 # make sure your version of the files are up to date before you try to add new things to the repository
@@ -140,7 +140,7 @@ Other important websites:
 *  Thingiverse has lots of patterns to 3D print [here](https://www.thingiverse.com/)
 *  Raspberry Pis are computers but Arduino microcontrollers are also very useful for projects [here](https://www.arduino.cc/)
 *  OpenScad is a free program to design 3D objects [here](http://www.openscad.org/)
-*  More info on github pages [here](https://pages.github.com/)
+*  More info on Github pages [here](https://pages.github.com/)
 *  Jekyll is a tool to help develop your website with Github [here](https://help.github.com/articles/using-jekyll-with-pages/)
 
 ##Pi passwords and backing up files
