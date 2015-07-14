@@ -180,7 +180,9 @@ sudo passwd student
 ```
 
 ###Create a backup of your Raspberry Pi SD card
+Creating a periodic backup of your Raspberry Pi SD card is another way to protect your classroom projects. Additionally, a single backup can be used to clone one configured Raspberry Pi onto many Raspberry Pis. Restoring or cloning a Raspberry Pi is easy, so there is less risk that giving students full access to the Raspberry Pi will cause unrecoverable problems.
 
+The easiest way to create a backup is to mount the SD card onto a Mac or Windows computer with an SD card reader and use [ApplePi-Baker](http://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/) or a [Windows-based](http://www.tweaking4all.com/hardware/raspberry-pi/install-img-to-sd-card/#windows) card flashing utility to create an image of the Raspberry Pi SD card that you store on your Mac or Windows computer. You can use these utilities to restore your Raspberry Pi or clone the same OS image onto other Raspberry Pi SD cards.
 
 ##Introduction to Soldering
 
