@@ -411,8 +411,9 @@ For example:
 ```
 
 You just processed one image, you will see a bunch of information print out to the screen, and lots of new images appear in your working directory.
-If you had many images to process you would then use the "parallelization" script, which runs the 'single image script' over a bunch of images.
-
+If you had many images to process you would then use the "parallelization" script, which runs the 'single image script' over a bunch of images and
+then saves the data to a database. We won't be doing that today but the instructions are [here](http://plantcv.danforthcenter.org/pages/documentation/function_docs/vis_tutorial.html).
+If you had run a full set of data (many plants growing over a period of time) you could then use R to analyze the data.
 
 # Use R to analyze phenotyping data
 
@@ -439,10 +440,19 @@ if (!file.exists('vis_snapshots_nocorrect.csv')) {
 }
 ```
 
-Read the data from the CSV file.
+Read the data from the CSV file. (This is saving the information into memory)
 
 ```r
 vis.data = read.table(file="vis_snapshots_nocorrect.csv", sep=",", header=TRUE)
+```
+
+```r
+
+#Now your data is saved to a variable named vis.data
+#The function head, lets you view the first 10 lines of that table.
+
+head(vis.data)
+
 ```
 
 We need to format and label the data. The details in this section can be ignored for now.
