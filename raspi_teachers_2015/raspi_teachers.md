@@ -394,7 +394,7 @@ We built PlantCV (Plant Computer Vision) to process plant images specifically, b
 Pick an image and look at the name to determine which script to run most scripts are in dev (see example below) type:
 
 ```
-path_to_script Ði path_to_image Ðo destination_folder_for_output_images ÐD
+path_to_script -i path_to_image -o destination_folder_for_output_images -D
 ```
 
 For example:
