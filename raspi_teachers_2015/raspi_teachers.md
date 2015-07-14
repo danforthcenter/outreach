@@ -102,6 +102,7 @@ git clone https://github.com/danforthcenter/outreach.git
 We won't be doing this today, but you can also add data to a repository if you've made changes.
 
 Four steps add data to a repository (that you have permissions to you can also do a 'pull' request that is asking for permission to push):
+
 1)  To add data to a repository: (make sure you are in right folder)
 
 ```
@@ -145,7 +146,41 @@ Other important websites:
 
 ##Pi passwords and backing up files
 
-**More from Noah**
+The OS Raspbian comes with a single preconfigured user account (username: pi, password: raspberry). The pi user account is a privileged user, meaning that it has the capability of installing software, modifying the computer settings, etc. This can be a great way to learn how to administer Linux systems but for a classroom setting it could potentially lead to accidental changes that could ruin a project. There are two complementary ways to address this problem.
+
+###Secure the pi user account and create a student user account
+1) Anyone on the internet can find the default username/password, so change the pi user password to something more secure.
+
+```
+passwd
+
+# Follow the instructions to set a new password
+```
+
+2) Create a new student account. By default new users are not privileged users. As the pi user you have access to administrator (root) capabilities using the "sudo" command.
+
+```
+sudo useradd -b /home -m -g users student
+
+# sudo lets the pi user execute the useradd command as the administrator
+# -b sets the base location of the student user home directory
+# -m tells useradd to create the home directory
+# -g users sets the student account group to users
+```
+
+3) Set the password for the student account
+
+```
+sudo passwd student
+
+# Follow the instructions to set a password for the student account.
+# This is the same command you used to set the pi user password
+# except that here you are using administrator privilege to set the
+# password for another account.
+```
+
+###Create a backup of your Raspberry Pi SD card
+
 
 ##Introduction to Soldering
 
