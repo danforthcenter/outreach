@@ -1,6 +1,6 @@
 # DDPSC Raspberry Pi Teacher's Workshop: Working with Raspberry Pi
 
-#Introduction to Raspberry Pi
+##Introduction to Raspberry Pi
 
 *  See slide decks [here](https://github.com/danforthcenter/outreach/tree/master/raspi_teachers_2015/Presentations)
 *  See these websites for more information on how to use Raspberry Pis:
@@ -17,7 +17,7 @@ but if you want to do one yourself you can download the operating system from th
 ApplePi-Baker that is available [here](http://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/) putting a disk image on a card, scroll down to download the **non-sudo version**.
 For Windows users options for flashing cards can be found [here](http://www.tweaking4all.com/hardware/raspberry-pi/install-img-to-sd-card/#windows).  
 
-#Next we will set up the Raspberry Pi configurations
+##Next we will set up the Raspberry Pi configurations
 
 For more information see the [Raspberry Pi Github Page](/github.com/raspberrypi/documentation/blob/master/configuration/README.md). There will be more on github later.
 
@@ -27,7 +27,7 @@ In addition to the command-line interface, Raspberry Pi computers can run a desk
 startx
 ```
 
-# Basic Linux operations  
+##Basic Linux operations  
 
 What is Linux?: Linux is an operating system, which is software that supports basic computer functions.
 Other examples of operating systems are Unix, Mac OS, Windows XP or Windows 7. You can do things like,
@@ -37,7 +37,7 @@ Windows or Mac interface you would use text (the command line).
 
 From the desktop you can run a terminal program to continue to use the command-line interface (called LXTerminal).
 
-## Basic Linux shell commands  
+##Basic Linux shell commands  
 
 If you need help on how/why to use a command the best thing to do is to google it.  
 
@@ -86,7 +86,7 @@ If you need help on how/why to use a command the best thing to do is to google i
 **exit** - log out of the current session
 
 
-# Introduction to Github and other websites of interest.
+##Introduction to Github and other websites of interest.
 
 *  [Github](https://github.com/): Github is a way to code collaboratively, or to find code to jumpstart your project.
 Github + Jekyll + Markdown is also an easy way to set up a website for your projects. 
@@ -140,7 +140,7 @@ Other important websites:
 
 **More from Noah**
 
-# Introduction to Soldering
+##Introduction to Soldering
 
 Soldering is basically like metal glue. We will be soldering a small IR light panel so that we can take images at night.
 
@@ -148,7 +148,7 @@ Soldering is basically like metal glue. We will be soldering a small IR light pa
 *  And [here](https://github.com/danforthcenter/outreach/tree/master/raspi_teachers_2015/How%20to%20solder)
 
 
-# Using the Raspberry Pi camera
+##Using the Raspberry Pi camera
 
 The Raspberry Pi camera module is a 5 megapixel, fixed-focus camera add-on for the Raspberry Pi. Each of your Raspberry Pi computers has a camera module installed. Your camera module is the Pi NoIR model (the infrared filter has been removed).
 
@@ -330,7 +330,7 @@ To see your videos we will also add them to a playlist here
 
 [playlist link](https://www.youtube.com/playlist?list=PLimbrUa_ArHwJ9n_HL_IQsU0pAGpnxtPD)
 
-#Now let's move your movie to a folder with your name
+##Now let's move your movie to a folder with your name
 
 ```
 
@@ -356,7 +356,7 @@ ls -l /home/pi/yourname/
 
 ```
 
-# Introduction to Raspberry Pi Sensors
+##Introduction to Raspberry Pi Sensors
 
 There are numerous sensors that are available for Raspberry Pi computers and also for Arduino microcontrollers.
 
@@ -377,7 +377,7 @@ How to make your Raspberry pi more 'rugged'
 
 **More here from Noah**
 
-# Opensource tools for image analysis
+##Opensource tools for image analysis
 
 Collecting time lapse images are great for demonstrating concepts of plant growth, plant movement, and circadian rhythms.
 But you might want to actually measure plant growth and plant movement. There are several opensource tools that make these measurements easier.
@@ -418,7 +418,7 @@ If you had many images to process you would then use the "parallelization" scrip
 then saves the data to a database. We won't be doing that today but the instructions are [here](http://plantcv.danforthcenter.org/pages/documentation/function_docs/vis_tutorial.html).
 If you had run a full set of data (many plants growing over a period of time) you could then use R to analyze the data.
 
-# Use R to analyze phenotyping data
+##Use R to analyze phenotyping data
 
 R is a programming language that is used primarily for statistical analysis. To start R type:
 
