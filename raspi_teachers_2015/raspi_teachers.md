@@ -32,8 +32,7 @@ startx
 
 What is Linux?: Linux is an operating system, which is software that supports basic computer functions.
 Other examples of operating systems are Unix, Mac OS, Windows XP or Windows 7. You can do things like,
-make files, move files, copy files, make directories (folders) etc. etc. but instead of seeing icons like a
-Windows or Mac interface you would use text (the command line).
+make files, move files, copy files, make directories (folders) etc. etc. but instead of seeing icons like a Windows or Mac interface you would use text (the command line).
 
 
 From the desktop you can run a terminal program to continue to use the command-line interface (called LXTerminal).
