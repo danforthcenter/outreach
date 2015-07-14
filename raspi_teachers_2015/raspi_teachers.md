@@ -2,7 +2,7 @@
 
 #Introduction to Raspberry Pi
 
-*  See slide deck here:
+*  See slide decks [here](https://github.com/danforthcenter/outreach/tree/master/raspi_teachers_2015/Presentations)
 *  See these websites for more information on how to use Raspberry Pis:
     *  [https://www.raspberrypi.org/](https://www.raspberrypi.org/)
     *  [http://sonic-pi.net/](http://sonic-pi.net/)
@@ -134,13 +134,18 @@ Other important websites:
 *  Raspberry Pis are computers but Arduino microcontrollers are also very useful for projects [here](https://www.arduino.cc/)
 *  OpenScad is a free program to design 3D objects [here](http://www.openscad.org/)
 *  More info on github pages [here](https://pages.github.com/)
-*  Jekyll is a tool to help develop your website with Github [here](https://help.github.com/articles/using-jekyll-with-pages/)  
+*  Jekyll is a tool to help develop your website with Github [here](https://help.github.com/articles/using-jekyll-with-pages/)
+
+#Pi passwords and backing up files
+
+**More from Noah**
 
 # Introduction to Soldering
 
 Soldering is basically like metal glue. We will be soldering a small IR light panel so that we can take images at night.
 
 *  More on how to solder [here](https://learn.adafruit.com/adafruit-guide-excellent-soldering/tools)
+*  And [here](https://github.com/danforthcenter/outreach/tree/master/raspi_teachers_2015/How%20to%20solder)
 
 
 # Using the Raspberry Pi camera
@@ -321,9 +326,9 @@ mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:aspect=16/9:vbitrate=8000000 
 
 ```
 
-To see your videos we will add them to a playlist here
+To see your videos we will also add them to a playlist here
 
-[playlist link](https://www.youtube.com/playlist?list=PLimbrUa_ArHwSIwb2BaugnaN-TBRzpRmu)
+[playlist link](https://www.youtube.com/playlist?list=PLimbrUa_ArHwJ9n_HL_IQsU0pAGpnxtPD)
 
 #Now let's move your movie to a folder with your name
 
@@ -358,6 +363,246 @@ There are numerous sensors that are available for Raspberry Pi computers and als
 *  Adafruit has a nice selection of sensors and tutorials [here](http://www.adafruit.com/category/35)
 *  The best way to find out how to use a sensor is to google it and find online tutorials.
 
+We will be using four different 'sensor' modules today
+1)  Light panel: Bright Pi, more information [here](https://github.com/danforthcenter/outreach/tree/master/raspi_teachers_2015/Bright%20Pi%20assembly%20instructions)  
+2)  Solar panel: Assembly instructions [here](https://blog.adafruit.com/2014/06/20/how-to-build-a-solar-powered-raspberry-pi-piday-raspberrypi-raspberry_pi/)  
+3)  Temperature sensor: More information [here](https://www.adafruit.com/product/1893)  
+4)  Light sensor: More information [here](https://www.adafruit.com/products/439)
+
+How to make your Raspberry pi more 'rugged'
+*  Weather proofing in a coffee can by Jim at fotosyn [here](http://www.fotosyn.com/simple-timelapse-camera-using-raspberry-pi-and-a-coffee-tin/)
+*  See post on 5 different cases [here](http://www.makeuseof.com/tag/5-ways-to-ruggedise-your-raspberry-pi/)
+*  This Rustoleum coating might work [here](http://www.geek.com/chips/neverwet-makes-the-raspberry-pi-and-other-gadgets-waterproof-1564340/)  
+
+# Opensource tools for image analysis
+
+Collecting time lapse images are great for demonstrating concepts of plant growth, plant movement, and circadian rhythms.
+But you might want to actually measure plant growth and plant movement. There are several opensource tools that make these measurements easier.
+
+*  ImageJ is [here](http://fiji.sc/Fiji)
+*  OpenCV (Open Computer Vision) is a library of image processing functions for a few languages (C/C++, Java, Python) that is widely used.  
+There is documentation [here](http://opencv.org/). OpenCV is a very powerful library but it is not the most user friendly.
+We built PlantCV (Plant Computer Vision) to process plant images specifically, building off of OpenCV and other available Python libraries.  
+*  PlantCV documentation and information is located [here](http://plantcv.danforthcenter.org/)
+*  R is a programming language that is used for statistical analysis, more information [here](http://www.r-project.org/)
+*  R studio is a free graphical user interface (GUI) to make running R code easier. More info [here](https://www.rstudio.com/)
+
+**Process images with PlantCV**
+
+[PlantCV](http://plantcv.danforthcenter.org/) is software we wrote at the Danforth Center to extract biologically meaningful information from images of plants. Go to [here](http://plantcv.danforthcenter.org/pages/documentation/function_docs/vis_tutorial.html) for detailed instructions.
+
+Pick an image and look at the name to determine which script to run most scripts are in dev (see example below) type:
+
+```
+path_to_script Ði path_to_image Ðo destination_folder_for_output_images ÐD
+```
+
+For example:
+
+```python
+
+#The first part is the script that is being run.
+#The -i is the path to the image you want analyzed
+#The -o tells the program where to put the output images. A . means it will put the images in whatever directory you are currently in.
+#The -D option at the end tells the program you are running it in debug mode, this means that every image at every step will get printed out (there are lots of steps, so lots of images)
+
+/home/pi/plantcv/scripts/dev/vis_sv_z2500_L2_e82.py -i /home/pi/nsf_reu_workshop/sample_images/brachypodium/VIS_SV_0_z2500_h2_g0_e82_300296\ copy.png -o . -D
+
+```
+
+You just processed one image, you will see a bunch of information print out to the screen, and lots of new images appear in your working directory.
+If you had many images to process you would then use the "parallelization" script, which runs the 'single image script' over a bunch of images.
+
+
+# Use R to analyze phenotyping data
+
+R is a programming language that is used primarily for statistical analysis. To start R type:
+
+```
+R
+```
+
+You are now in an R console session. Import some R packages:
+
+```r
+library(ggplot2)
+library(lubridate)
+library(MASS)
+```
+
+Download a complete set of data for VIS images from the Danforth Center phenotyping system from Figshare. There were a total of 6,399 snapshots with VIS image data, but the download only includes the 6,207 snapshots that were successfully processed by PlantCV. Failed snapshots generally are those that lack a plant (empty pot controls, dead plants, etc.). The code below checks to see if the files exist and downloads them automatically if they do not.
+
+```r
+if (!file.exists('vis_snapshots_nocorrect.csv')) {
+  download.file('http://files.figshare.com/2084100/vis_snapshots_nocorrect.csv',
+                'vis_snapshots_nocorrect.csv')
+}
+```
+
+Read the data from the CSV file.
+
+```r
+vis.data = read.table(file="vis_snapshots_nocorrect.csv", sep=",", header=TRUE)
+```
+
+We need to format and label the data. The details in this section can be ignored for now.
+
+```r
+# Planting date
+planting_date = as.POSIXct("2013-11-26")
+
+# Add water treatment column coded in barcodes
+vis.data$treatment <- NA
+vis.data$treatment[grep("AA", vis.data$plant_id)] <- 100
+vis.data$treatment[grep("AB", vis.data$plant_id)] <- 0
+vis.data$treatment[grep("AC", vis.data$plant_id)] <- 16
+vis.data$treatment[grep("AD", vis.data$plant_id)] <- 33
+vis.data$treatment[grep("AE", vis.data$plant_id)] <- 66
+
+# Add plant genotype column coded in barcodes
+vis.data$genotype <- NA
+vis.data$genotype[grep("p1", vis.data$plant_id)] <- 'A10'
+vis.data$genotype[grep("p2", vis.data$plant_id)] <- 'B100'
+vis.data$genotype[grep("r1", vis.data$plant_id)] <- 'R20'
+vis.data$genotype[grep("r2", vis.data$plant_id)] <- 'R70'
+vis.data$genotype[grep("r3", vis.data$plant_id)] <- 'R98'
+vis.data$genotype[grep("r4", vis.data$plant_id)] <- 'R102'
+vis.data$genotype[grep("r5", vis.data$plant_id)] <- 'R128'
+vis.data$genotype[grep("r6", vis.data$plant_id)] <- 'R133'
+vis.data$genotype[grep("r7", vis.data$plant_id)] <- 'R161'
+vis.data$genotype[grep("r8", vis.data$plant_id)] <- 'R187'
+
+# Add genotype x treatment group column
+vis.data$group = paste(vis.data$genotype,'-',vis.data$treatment,sep='')
+
+# Add calendar-time data column using the Unix-time data
+vis.data$date = as.POSIXct(vis.data$datetime, origin = "1970-01-01")
+
+# Calculate days after planting from planting data
+vis.data$dap = as.numeric(vis.data$date - planting_date)
+
+# Convert VIS camera zoom units. LemnaTec VIS camera zoom units range from 1 to 6000, which correspond to 1 to 6X zoom
+zoom.lm = lm(zoom.camera ~ zoom, data=data.frame(zoom=c(1,6000), zoom.camera=c(1,6)))
+
+# VIS zoom correction
+# Download data for a reference object imaged at different zoom levels.
+if (!file.exists('zoom_calibration_data.txt')) {
+  download.file('http://files.figshare.com/2084101/zoom_calibration_data.txt',
+                'zoom_calibration_data.txt')
+}
+z.data = read.table(file="zoom_calibration_data.txt", sep="\t", header=TRUE)
+
+# Calculate px per cm
+z.data$px_cm = z.data$length_px / z.data$length_cm
+
+# Convert LemnaTec zoom units to camera zoom units
+z.data$zoom.camera = predict(object = zoom.lm, newdata=z.data)
+vis.data$zoom = vis.data$sv_zoom
+vis.data$sv.zoom.camera = predict(object = zoom.lm, newdata=vis.data)
+vis.data$zoom = vis.data$tv_zoom
+vis.data$tv.zoom.camera = predict(object = zoom.lm, newdata=vis.data)
+
+# Non-linear (exponential) model for area zoom correction
+area.coef = coef(nls(log(rel_area) ~ log(a * exp(b * zoom.camera)),
+                     z.data, start = c(a = 1, b = 0.01)))
+area.coef = data.frame(a=area.coef[1], b=area.coef[2])
+area.nls = nls(rel_area ~ a * exp(b * zoom.camera),
+               data = z.data, start=c(a=area.coef$a, b=area.coef$b))
+
+# Non-linear (polynomial) model for length zoom correction
+len.poly = lm(px_cm ~ zoom.camera + I(zoom.camera^2),
+              data=z.data[z.data$camera == 'VIS SV',])
+              
+# Create zoom-corrected VIS data frame
+vis.data.zoom = vis.data[,c('plant_id', 'datetime', 'treatment', 'genotype', 'group', 'date', 'dap', 'solidity', 'outlier')]
+vis.data$zoom.camera = vis.data$sv.zoom.camera
+vis.data$sv_rel_area = predict(object = area.nls, newdata = vis.data)
+vis.data$zoom.camera = vis.data$tv.zoom.camera
+vis.data$tv_rel_area = predict(object = area.nls, newdata = vis.data)
+
+# Calculate total zoom-corrected side-view and top-view area
+vis.data.zoom$sv_area = (vis.data$sv0_area / vis.data$sv_rel_area) + (vis.data$sv90_area / vis.data$sv_rel_area) + (vis.data$sv180_area / vis.data$sv_rel_area) + (vis.data$sv270_area / vis.data$sv_rel_area)
+vis.data.zoom$tv_area = vis.data$tv_area / vis.data$tv_rel_area
+
+# Calculate zoom-corrected lengths
+vis.data$zoom.camera = vis.data$sv.zoom.camera
+vis.data$px_cm = predict(object = len.poly, newdata=vis.data)
+vis.data.zoom$extent_x = vis.data$extent_x / vis.data$px_cm
+vis.data.zoom$extent_y = vis.data$extent_y / vis.data$px_cm
+vis.data.zoom$height_above_bound = vis.data$height_above_bound / vis.data$px_cm
+```
+
+## Model fresh-weight biomass from image data for Setaria
+
+Download data manually measured plant biomass data set (n = 41).
+
+```r
+if (!file.exists('manual_biomass_samples.csv')) {
+  download.file('http://files.figshare.com/2084103/manual_biomass_samples.csv',
+                'manual_biomass_samples.csv')
+}
+```
+
+Read the CSV file
+
+```r
+manual.st.data = read.table(file='manual_biomass_samples.csv', sep=",", header=TRUE, stringsAsFactors=FALSE)
+```
+
+Get data from the VIS data for each manual biomass sample
+```r
+st.data = merge(manual.st.data, vis.data.zoom, by = c('plant_id', 'datetime'))
+```
+
+A full model for fresh-weight biomass. Includes side-view area, top-view area and height.
+```r
+fw.full = lm(fresh_weight ~ sv_area * tv_area * height_above_bound, st.data)
+```
+
+Step-wise model selection with AIC.
+```r
+fw.step = stepAIC(fw.full, direction="both")
+summary(fw.step)
+```
+
+AIC model
+```r
+fw.aic = lm(fresh_weight ~ sv_area + tv_area + height_above_bound +
+              sv_area*height_above_bound, st.data)
+summary(fw.aic)
+```
+
+The AIC model contains tv_area and height which does not have a significant coefficient, test dropping.
+```r
+fw.red = lm(fresh_weight ~ sv_area, st.data)
+summary(fw.red)
+```
+
+Goodness of fit.
+```r
+anova(fw.aic, fw.red)
+```
+
+Side-view area model.
+```r
+sv.model = lm(fresh_weight ~ sv_area, st.data)
+summary(sv.model)
+```
+
+Plot SV model
+```r
+sv.model.plot = ggplot(st.data,aes(x=sv_area/1e5, y=fresh_weight)) +
+                       geom_smooth(method="lm", color="black", formula = y ~ x) +
+                       geom_point(size=2.5) +
+                       scale_x_continuous("Shoot and leaf area (x10^5 px)") +
+                       scale_y_continuous("Fresh-weight biomass (g)") +
+                       theme_bw() +
+                       theme(axis.title.x=element_text(face="bold"),
+                             axis.title.y=element_text(face="bold"))
+print(sv.model.plot)
+```
+
+
 # Connecting a sensor to a Google doc
 
 **More here from Noah**
@@ -370,7 +615,10 @@ There are numerous sensors that are available for Raspberry Pi computers and als
 
 **Moderated by Terry**
 
+**Notes:**
+
 # Module planning notes
 
 **Moderated by Terry**
 
+**Notes:**
