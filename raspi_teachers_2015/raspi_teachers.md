@@ -2,7 +2,7 @@
 
 #Introduction to Raspberry Pi
 
-*  See slide deck here:
+*  See slide decks [here](https://github.com/danforthcenter/outreach/tree/master/raspi_teachers_2015/Presentations)
 *  See these websites for more information on how to use Raspberry Pis:
     *  [https://www.raspberrypi.org/](https://www.raspberrypi.org/)
     *  [http://sonic-pi.net/](http://sonic-pi.net/)
@@ -134,13 +134,18 @@ Other important websites:
 *  Raspberry Pis are computers but Arduino microcontrollers are also very useful for projects [here](https://www.arduino.cc/)
 *  OpenScad is a free program to design 3D objects [here](http://www.openscad.org/)
 *  More info on github pages [here](https://pages.github.com/)
-*  Jekyll is a tool to help develop your website with Github [here](https://help.github.com/articles/using-jekyll-with-pages/)  
+*  Jekyll is a tool to help develop your website with Github [here](https://help.github.com/articles/using-jekyll-with-pages/)
+
+#Pi passwords and backing up files
+
+**More from Noah**
 
 # Introduction to Soldering
 
 Soldering is basically like metal glue. We will be soldering a small IR light panel so that we can take images at night.
 
 *  More on how to solder [here](https://learn.adafruit.com/adafruit-guide-excellent-soldering/tools)
+*  And [here](https://github.com/danforthcenter/outreach/tree/master/raspi_teachers_2015/How%20to%20solder)
 
 
 # Using the Raspberry Pi camera
@@ -358,6 +363,21 @@ There are numerous sensors that are available for Raspberry Pi computers and als
 *  Adafruit has a nice selection of sensors and tutorials [here](http://www.adafruit.com/category/35)
 *  The best way to find out how to use a sensor is to google it and find online tutorials.
 
+We will be using four different 'sensor' modules today
+1)  Light panel: Bright Pi, more information [here](https://github.com/danforthcenter/outreach/tree/master/raspi_teachers_2015/Bright%20Pi%20assembly%20instructions)  
+2)  Solar panel: Assembly instructions [here](https://blog.adafruit.com/2014/06/20/how-to-build-a-solar-powered-raspberry-pi-piday-raspberrypi-raspberry_pi/)  
+3)  Temperature sensor: More information [here](https://www.adafruit.com/product/1893)  
+4)  Light sensor: More information [here](https://www.adafruit.com/products/439)
+
+How to make your Raspberry pi more 'rugged'
+*  Weather proofing in a coffee can by Jim at fotosyn [here](http://www.fotosyn.com/simple-timelapse-camera-using-raspberry-pi-and-a-coffee-tin/)
+*  See post on 5 different cases [here](http://www.makeuseof.com/tag/5-ways-to-ruggedise-your-raspberry-pi/)
+*  This Rustoleum coating might work [here](http://www.geek.com/chips/neverwet-makes-the-raspberry-pi-and-other-gadgets-waterproof-1564340/)  
+
+# Opensource tools for image analysis  
+
+**More here**
+
 # Connecting a sensor to a Google doc
 
 **More here from Noah**
@@ -370,7 +390,10 @@ There are numerous sensors that are available for Raspberry Pi computers and als
 
 **Moderated by Terry**
 
+**Notes:**
+
 # Module planning notes
 
 **Moderated by Terry**
 
+**Notes:**
