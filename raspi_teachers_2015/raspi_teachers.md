@@ -88,8 +88,7 @@ If you need help on how/why to use a command the best thing to do is to google i
 
 ##Introduction to Github and other websites of interest.
 
-*  [Github](https://github.com/): Github is a way to code collaboratively, or to find code to jumpstart your project.
-Github + Jekyll + Markdown is also an easy way to set up a website for your projects. 
+*  [Github](https://github.com/): Github is a way to code collaboratively, or to find code to jumpstart your project. Github + Jekyll + Markdown is also an easy way to set up a website for your projects. 
 
 
 To clone a repository in LXterminal type:
@@ -105,7 +104,7 @@ We won't be doing this today, but you can also add data to a repository if you'v
 Four steps add data to a repository (that you have permissions to you can also do a 'pull' request that is asking for permission to push):
 1)  To add data to a repository: (make sure you are in right folder)
 
-```
+```bash
 # the . means to add all
 # instead of adding all you can add specific files
 git add .
