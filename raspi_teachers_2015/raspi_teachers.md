@@ -101,8 +101,9 @@ git clone https://github.com/danforthcenter/outreach.git
 
 ```
 
+We won't be doing this today, but you can also add data to a repository if you've made changes.
 
-Four steps add data to a repository (that you have permissions to):
+Four steps add data to a repository (that you have permissions to you can also do a 'pull' request that is asking for permission to push):
 1)  To add data to a repository: (make sure you are in right folder)
 
 ```
