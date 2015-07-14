@@ -19,7 +19,8 @@ For Windows users options for flashing cards can be found [here](http://www.twea
 
 ##Next we will set up the Raspberry Pi configurations
 
-For more information see the [Raspberry Pi Github Page](/github.com/raspberrypi/documentation/blob/master/configuration/README.md). There will be more on github later.
+For more information see the [Raspberry Pi Github Page](/github.com/raspberrypi/documentation/blob/master/configuration/README.md). There will be more on using github later.
+
 
 In addition to the command-line interface, Raspberry Pi computers can run a desktop environment. To start it type after logging in:
 
@@ -92,7 +93,13 @@ If you need help on how/why to use a command the best thing to do is to google i
 Github + Jekyll + Markdown is also an easy way to set up a website for your projects. 
 
 
-To clone a repository:
+To clone a repository in LXterminal type:
+
+```
+
+git clone https://github.com/danforthcenter/outreach.git
+
+```
 
 
 Four steps add data to a repository (that you have permissions to):
