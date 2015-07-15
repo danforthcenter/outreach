@@ -19,7 +19,15 @@ For Windows users options for flashing cards can be found [here](http://www.twea
 
 ##Next we will set up the Raspberry Pi configurations
 
-For more information see the [Raspberry Pi Github Page](/github.com/raspberrypi/documentation/blob/master/configuration/README.md). There will be more on using github later.
+For more information see the [Raspberry Pi Github Page](https://github.com/raspberrypi/documentation/blob/master/configuration/raspi-config.md). There will be more on using github later.
+
+To go back to the configuration window
+
+```
+
+sudo raspi-config
+
+```
 
 
 In addition to the command-line interface, Raspberry Pi computers can run a desktop environment. To start it type after logging in:
@@ -137,16 +145,25 @@ git push
 
 ```
 
-Other important websites:
+Other important websites to check out:
 *  Thingiverse has lots of patterns to 3D print [here](https://www.thingiverse.com/)
 *  Raspberry Pis are computers but Arduino microcontrollers are also very useful for projects [here](https://www.arduino.cc/)
 *  OpenScad is a free program to design 3D objects [here](http://www.openscad.org/)
 *  More info on github pages [here](https://pages.github.com/)
 *  Jekyll is a tool to help develop your website with Github [here](https://help.github.com/articles/using-jekyll-with-pages/)
 
-##Pi passwords and backing up files
+##Pi passwords and backing up disk images
 
 **More from Noah**
+
+**Changing Pi Passwords**
+
+**Backing up files etc.**
+
+You should always have a backup of programs that you've spent significant time on. One method of doing that is to have a github
+repository with all of your important working scripts that you can download if something gets deleted or modified.
+Another method is to save a disk image.
+
 
 ##Introduction to Soldering
 
@@ -373,8 +390,9 @@ There are numerous sensors that are available for Raspberry Pi computers and als
 
 We will be using four different 'sensor' modules today  
 1)  Light panel: Bright Pi, more information [here](https://github.com/danforthcenter/outreach/tree/master/raspi_teachers_2015/Bright%20Pi%20assembly%20instructions)  
-2)  Temperature sensor: More information [here](https://www.adafruit.com/product/1893)  
-3)  Light sensor: More information [here](https://www.adafruit.com/products/439)
+2)  Temperature sensor: More information [here](https://www.adafruit.com/product/1893)
+3)  Temperature sensor #2 : More information [here](http://www.adafruit.com/products/393)
+5)  Light sensor: More information [here](https://www.adafruit.com/products/439)
 
 How to make your Raspberry pi more 'rugged'
 *  Weather proofing in a coffee can by Jim at fotosyn [here](http://www.fotosyn.com/simple-timelapse-camera-using-raspberry-pi-and-a-coffee-tin/)
