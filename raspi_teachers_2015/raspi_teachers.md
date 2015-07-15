@@ -85,6 +85,12 @@ If you need help on how/why to use a command the best thing to do is to google i
 
 **exit** - log out of the current session
 
+**sudo** ***command*** - execute *command* with administrator privileges
+
+**apt-get install** ***program*** - apt-get is the Debian Linux package manager. You can use it to install new software on your computer
+
+**apt-get update** - update the installed packages on your system 
+
 
 ##Introduction to Github and other websites of interest.
 
@@ -202,17 +208,26 @@ To take a picture, see it, and save it with the name *image.jpg* use the followi
 
 ```python
 
-# this command will take a picture but it will put it in whatever working directory (folder) you are in
-# the -o tells the program what to name the image and also where to put it, if it is just the name it puts the image in whatever folder you are currently in.
+# This command will take a picture but it will put it in whatever
+# working directory (folder) you are in.
+
+# The -o is an option/flag that tells the program what we want to
+# name the image and also where to put it. If it is just the name
+# it puts the image in whatever folder you are currently in.
+
 raspistill -o image1.jpg
 
-# To see where you've save the image (what folder you are currently in) type
+# To see where you've save the image
+# (what folder you are currently in) type:
+
 pwd
 
 # To see the names of the files in your current folder type
+
 ls -l
 
 ```
+
 **Pro-tip, if you want to rerun a command that you recently used, you can hit the uparrow to get to previous commands**
 
 To actually view the image, you can go to the file folder icon on the desktop and open the file or on the command line...
@@ -233,33 +248,44 @@ raspistill -vf -o image1.jpg
 
 ```
 
-
-## Save images to a directory
-
-The image *image.jpg* is saved to your current working directory. Instead you might want to save images to a specific directory.
-
-```
-mkdir images
-
-#now you've made a folder named images
-
-raspistill -o /home/pi/images/image1.jpg
-
-#The -o flag tells the raspistill program that you want to save the file to a specific place.
-# remember if your camera is upsidedown to use the -vf flag.
-```
-
 ## Save images with unique names and some metadata
+If you add the current date and time to the name of your images you can use the same command over and over again because each image will have a unique name and doesn't get overwritten.
 
-To take a picture, see it, and save it with the time stamp in front of the name image.jpg in the directory images in your home folder use the following command: 
+
+To take a picture, see it, and save it with the date and time in front of the name image.jpg in the directory images in your home folder use the following command: 
 
 ```
+# the name of the image below would include the current year,
+month, day, hour, minute, and second
 
-# if you add the timestamp to the name you can use the same command over and over again (gives the imaage a new name and doesn't overwrite)
-# the name of the image below would include the current year, month, day, hour, min, and second
-raspistill -o /home/pi/images/$(date +"%Y-%m-%d_%H:\%M:%S")_images.jpg
+raspistill -o /home/pi/images/$(date +"%Y-%m-%d_%H:%M:%S")_images.jpg
 
-# now press the up arrow, the command you just ran should show up, take another picture.
+# now press the up arrow, the command you just ran
+should show up, take another picture.
+```
+
+##Configure the Bright Pi module to add lighting to our images
+In order to use the Bright Pi module we need to set up our Raspberry Pi computers to use the GPIO pins following the instructions at [Adafruit](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c).
+
+Next, wire your Bright Pi light module following the wiring instructions on screen and at [Pi Supply](https://www.pi-supply.com/bright-pi-v1-0-assembly-instructions/).
+
+Because our Bright Pi LED lights are infrared we cannot look at them to see if they are on and working. But, because we are combining the Bright Pi light modules with the PiNoIR camera modules we can use the camera to see if the lights work. The [Pi Supply](https://www.pi-supply.com/bright-pi-v1-0-code-examples/) page describes the basics of controlling the Bright Pi with I2C [Inter-Integrated Circuit](https://en.wikipedia.org/wiki/I%C2%B2C) commands.
+
+For today's workshop we will demonstrate controlling both the Bright Pi light module and the camera module using the Python programming language. Let's go over the example script, LightsCameraAction.py, that was cloned with the Github repository.
+
+```
+python LightsCameraAction.py --help
+
+usage: LightsCameraAction.py [-h] [--on] [--white] [--ir] [--off]
+
+Turn on/off Pi Bright LED lights.
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --on        Turn all the lights on (default: False)
+  --white     Turn on the white lights only (default: False)
+  --ir        Turn on the IR lights only (default: False)
+  --off       Turn all the lights off (default: False)
 ```
 
 ## Take a time-lapse
