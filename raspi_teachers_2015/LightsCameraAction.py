@@ -44,7 +44,7 @@ def main():
 		bus.write_byte_data(DEVICE_ADDRESS, 0x08, 0x32)
 
 		# Take a picture
-		take_a_picture('all')
+		take_a_picture(args, 'all')
 
 	if args.white:
 		# White light LEDs on
@@ -60,7 +60,7 @@ def main():
 		bus.write_byte_data(DEVICE_ADDRESS, 0x07, 0x32)
 	
 		# Take a picture
-		take_a_picture('white')
+		take_a_picture(args, 'white')
 	
 	if args.ir:
 		# All IR LEDs on
@@ -76,13 +76,13 @@ def main():
 		bus.write_byte_data(DEVICE_ADDRESS, 0x08, 0x32)
 		
 		# Take a picture
-		take_a_picture('ir')
+		take_a_picture(args, 'ir')
 
 	if args.off:
 		# All lights off
 		bus.write_byte_data(DEVICE_ADDRESS, 0x00, 0x00)
 
-def take_a_picture(which_lights):
+def take_a_picture(args, which_lights):
 	# Initialize camera
 	camera = picamera.PiCamera()
 	
