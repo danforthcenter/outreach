@@ -12,6 +12,7 @@ def options():
 	parser.add_argument("--white", help="Turn on the white lights only", default=False, action="store_true")
 	parser.add_argument("--ir", help="Turn on the IR lights only", default=False, action="store_true")
 	parser.add_argument("--off", help="Turn all the lights off", default=False, action="store_true")
+	parser.add_argument("--outdir", help="Output directory path", default='.')
 	args = parser.parse_args()
 	
 	return(args)
@@ -98,7 +99,7 @@ def take_a_picture(which_lights):
 	
 	# Take a picture with the settings above
 	# Name the file with the date, time and light settings (which set of lights was turned on)
-	camera.capture('/home/pi/images/' + dtime + '_' + which_lights + '.jpg')
+	camera.capture(args.outdir + '/' + dtime + '_' + which_lights + '.jpg')
 
 if __name__ == '__main__':
 	main()

@@ -279,15 +279,17 @@ For today's workshop we will demonstrate controlling both the Bright Pi light mo
 python LightsCameraAction.py --help
 
 usage: LightsCameraAction.py [-h] [--on] [--white] [--ir] [--off]
+                             [--outdir OUTDIR]
 
 Turn on/off Pi Bright LED lights.
 
 optional arguments:
-  -h, --help  show this help message and exit
-  --on        Turn all the lights on (default: False)
-  --white     Turn on the white lights only (default: False)
-  --ir        Turn on the IR lights only (default: False)
-  --off       Turn all the lights off (default: False)
+  -h, --help       show this help message and exit
+  --on             Turn all the lights on (default: False)
+  --white          Turn on the white lights only (default: False)
+  --ir             Turn on the IR lights only (default: False)
+  --off            Turn all the lights off (default: False)
+  --outdir OUTDIR  Output directory path (default: .)
 ```
 
 ## Take a time-lapse
@@ -318,7 +320,7 @@ Crontab is an easy way to schedule repeating tasks so it can be used as another 
 First let's make another folder so that we don't confuse it with the first timelapse
 
 ```
-mkdir /home/pi/timelapse2
+mkdir /home/pi/timelapse
 ```
 
 Open up the crontab file using the leafpad text editor program. We need to have administrator privilege to modify this file.
@@ -345,18 +347,16 @@ Add the following line to the cron file (you should see a list of commands that 
 ```
 #this tells the command to run every 10 min of every hour every day of the month every day of the week.
 
-*/10 * * * * pi /usr/bin/raspistill -o /home/pi/timelapse2/$(date +"\%Y-\%m-\%d_\%H:\%M:\%S")_timelapse.jpg
+*/10 * * * * pi python /home/pi/outreach/raspi_teachers_2015/LightsCameraAction.py --white --off --outdir /home/pi/timelapse
 
 #save the file and close it
 
 ```
 
-now we need to restart the cron to make sure the changes take effect. On the command line type
+Now we need to restart the cron service to make sure the changes take effect. On the command line type
 
 ```
-
 sudo service cron restart
-
 ```
 
 Can I test my commands before putting them into crontab?
