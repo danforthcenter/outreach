@@ -15,34 +15,24 @@ The Raspberry Pi computers you will work with today are Pi 2 Model B ($35, 4-cor
 Our Raspberry Pis are running a Linux operating system "Raspbian" which is a fork of Debian 7 "Wheezy." The operating system is on the microSD card in your Pi. We've 'flashed' the cards for you
 but if you want to do one yourself you can download the operating system from the [Raspberry Pi website](https://www.raspberrypi.org/downloads/). For Mac users we recommend using the free program
 ApplePi-Baker that is available [here](http://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/) putting a disk image on a card, scroll down to download the **non-sudo version**.
-For Windows users options for flashing cards can be found [here](http://www.tweaking4all.com/hardware/raspberry-pi/install-img-to-sd-card/#windows).  
+For Windows users, options for flashing cards can be found [here](http://www.tweaking4all.com/hardware/raspberry-pi/install-img-to-sd-card/#windows).  
 
 ##Next we will set up the Raspberry Pi configurations
 
-For more information see the [Raspberry Pi Github Page](https://github.com/raspberrypi/documentation/blob/master/configuration/raspi-config.md). There will be more on using github later.
-
-To go back to the configuration window
-
-```
-
-sudo raspi-config
-
-```
+For more information see the [Raspberry Pi Github Page](/github.com/raspberrypi/documentation/blob/master/configuration/README.md). There will be more on using GitHub later.
 
 
 In addition to the command-line interface, Raspberry Pi computers can run a desktop environment. To start it type after logging in:
 
 ```
 startx
-
 ```
 
 ##Basic Linux operations  
 
 What is Linux?: Linux is an operating system, which is software that supports basic computer functions.
 Other examples of operating systems are Unix, Mac OS, Windows XP or Windows 7. You can do things like,
-make files, move files, copy files, make directories (folders) etc. etc. but instead of seeing icons like a
-Windows or Mac interface you would use text (the command line).
+make files, move files, copy files, make directories (folders) etc. etc. but instead of seeing icons like a Windows or Mac interface you would use text (the command line).
 
 
 From the desktop you can run a terminal program to continue to use the command-line interface (called LXTerminal).
@@ -104,8 +94,7 @@ If you need help on how/why to use a command the best thing to do is to google i
 
 ##Introduction to Github and other websites of interest.
 
-*  [Github](https://github.com/): Github is a way to code collaboratively, or to find code to jumpstart your project.
-Github + Jekyll + Markdown is also an easy way to set up a website for your projects. 
+*  [Github](https://github.com/): Github is a way to code collaboratively, or to find code to jumpstart your project. Github + Jekyll + Markdown is also an easy way to set up a website for your projects. 
 
 
 To clone a repository in LXterminal type:
@@ -119,6 +108,7 @@ git clone https://github.com/danforthcenter/outreach.git
 We won't be doing this today, but you can also add data to a repository if you've made changes.
 
 Four steps add data to a repository (that you have permissions to you can also do a 'pull' request that is asking for permission to push):
+
 1)  To add data to a repository: (make sure you are in right folder)
 
 ```
@@ -127,6 +117,7 @@ Four steps add data to a repository (that you have permissions to you can also d
 git add .
 
 ```
+
 2)  To commit data to a repository:
 
 ```
@@ -136,7 +127,7 @@ git commit -m "adding new data to this repository"
 
 ```
 
-3)  Pull the repository so that you make sure you are adding data to the newest version of the repository.
+3)  Pull the repository to merge your committed changes with the newest version of the repository.
 
 ```
 # make sure your version of the files are up to date before you try to add new things to the repository
@@ -152,25 +143,54 @@ git push
 
 ```
 
-Other important websites to check out:
+Other important websites:
 *  Thingiverse has lots of patterns to 3D print [here](https://www.thingiverse.com/)
 *  Raspberry Pis are computers but Arduino microcontrollers are also very useful for projects [here](https://www.arduino.cc/)
 *  OpenScad is a free program to design 3D objects [here](http://www.openscad.org/)
-*  More info on github pages [here](https://pages.github.com/)
+*  More info on Github pages [here](https://pages.github.com/)
 *  Jekyll is a tool to help develop your website with Github [here](https://help.github.com/articles/using-jekyll-with-pages/)
 
-##Pi passwords and backing up disk images
+##Pi passwords and backing up files
 
-**More from Noah**
+The OS Raspbian comes with a single preconfigured user account (username: pi, password: raspberry). The pi user account is a privileged user, meaning that it has the capability of installing software, modifying the computer settings, etc. This can be a great way to learn how to administer Linux systems but for a classroom setting it could potentially lead to accidental changes that could ruin a project. There are two complementary ways to address this problem.
 
-**Changing Pi Passwords**
+###Secure the pi user account and create a student user account
+1) Anyone on the internet can find the default username/password, so change the pi user password to something more secure.
 
-**Backing up files etc.**
+```
+passwd
 
-You should always have a backup of programs that you've spent significant time on. One method of doing that is to have a github
-repository with all of your important working scripts that you can download if something gets deleted or modified.
-Another method is to save a disk image.
+# Follow the instructions to set a new password
+```
 
+2) Create a new student account. By default new users are not privileged users. As the pi user you have access to administrator (root) capabilities using the "sudo" command.
+
+```
+sudo useradd -b /home -m -g users student
+
+# sudo lets the pi user execute the useradd command as the administrator
+# -b sets the base location of the student user home directory
+# -m tells useradd to create the home directory
+# -g users sets the student account group to users
+```
+
+3) Set the password for the student account
+
+```
+sudo passwd student
+
+# Follow the instructions to set a password for the student account.
+# This is the same command you used to set the pi user password
+# except that here you are using administrator privilege to set the
+# password for another account.
+```
+
+###Create a backup of your Raspberry Pi SD card
+You should always have a backup of programs that you've spent significant time on. One method of doing that is to have a Github repository with all of your important working scripts that you can download if something gets deleted or modified. Another method is to save a disk image.
+
+Creating a periodic backup of your Raspberry Pi SD card is another way to protect your classroom projects. Additionally, a single backup can be used to clone one configured Raspberry Pi onto many Raspberry Pis. Restoring or cloning a Raspberry Pi is easy, so there is less risk that giving students full access to the Raspberry Pi will cause unrecoverable problems.
+
+The easiest way to create a backup is to mount the SD card onto a Mac or Windows computer with an SD card reader and use [ApplePi-Baker](http://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/) or a [Windows-based](http://www.tweaking4all.com/hardware/raspberry-pi/install-img-to-sd-card/#windows) card flashing utility to create an image of the Raspberry Pi SD card that you store on your Mac or Windows computer. You can use these utilities to restore your Raspberry Pi or clone the same OS image onto other Raspberry Pi SD cards.
 
 ##Introduction to Soldering
 
@@ -295,13 +315,15 @@ crontab.
 
 Crontab is an easy way to schedule repeating tasks so it can be used as another way to do time-lapse imaging, like time-lapse imaging.
 
+First let's make another folder so that we don't confuse it with the first timelapse
+
 ```
-#First let's make another folder so that we don't confuse it with the first timelapse
-
 mkdir /home/pi/timelapse2
+```
 
-#This opens up the crontab file in using the leafpad text editor program
+Open up the crontab file using the leafpad text editor program. We need to have administrator privilege to modify this file.
 
+```
 sudo leafpad /etc/crontab
 ```
 
@@ -315,10 +337,10 @@ Crontab file format:
 # |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
 # |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
 # |  |  |  |  |
-# *  *  *  *  * command to be executed
+# *  *  *  *  * user command to be executed
 ```
 
-add the following line to the cron file (you should see a list of commands that also start with an astericks).
+Add the following line to the cron file (you should see a list of commands that also start with an astericks).
 
 ```
 #this tells the command to run every 10 min of every hour every day of the month every day of the week.
@@ -415,11 +437,12 @@ There are numerous sensors that are available for Raspberry Pi computers and als
 *  Adafruit has a nice selection of sensors and tutorials [here](http://www.adafruit.com/category/35)
 *  The best way to find out how to use a sensor is to google it and find online tutorials.
 
-We will be using four different 'sensor' modules today  
-1)  Light panel: Bright Pi, more information [here](https://github.com/danforthcenter/outreach/tree/master/raspi_teachers_2015/Bright%20Pi%20assembly%20instructions)  
-2)  Temperature sensor: More information [here](https://www.adafruit.com/product/1893)
-3)  Temperature sensor #2 : More information [here](http://www.adafruit.com/products/393)
-5)  Light sensor: More information [here](https://www.adafruit.com/products/439)
+We will be using four different 'sensor' modules today
+
+1. Light panel: Bright Pi, more information [here](https://github.com/danforthcenter/outreach/tree/master/raspi_teachers_2015/Bright%20Pi%20assembly%20instructions)  
+2. Temperature sensor: More information [here](https://www.adafruit.com/product/1893) 
+3. Temperature sensor #2 : More information [here](http://www.adafruit.com/products/393)
+4. Light sensor: More information [here](https://www.adafruit.com/products/439)
 
 How to make your Raspberry pi more 'rugged'
 *  Weather proofing in a coffee can by Jim at fotosyn [here](http://www.fotosyn.com/simple-timelapse-camera-using-raspberry-pi-and-a-coffee-tin/)
