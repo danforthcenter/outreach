@@ -15,24 +15,34 @@ The Raspberry Pi computers you will work with today are Pi 2 Model B ($35, 4-cor
 Our Raspberry Pis are running a Linux operating system "Raspbian" which is a fork of Debian 7 "Wheezy." The operating system is on the microSD card in your Pi. We've 'flashed' the cards for you
 but if you want to do one yourself you can download the operating system from the [Raspberry Pi website](https://www.raspberrypi.org/downloads/). For Mac users we recommend using the free program
 ApplePi-Baker that is available [here](http://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/) putting a disk image on a card, scroll down to download the **non-sudo version**.
-For Windows users, options for flashing cards can be found [here](http://www.tweaking4all.com/hardware/raspberry-pi/install-img-to-sd-card/#windows).  
+For Windows users options for flashing cards can be found [here](http://www.tweaking4all.com/hardware/raspberry-pi/install-img-to-sd-card/#windows).  
 
 ##Next we will set up the Raspberry Pi configurations
 
-For more information see the [Raspberry Pi Github Page](/github.com/raspberrypi/documentation/blob/master/configuration/README.md). There will be more on using GitHub later.
+For more information see the [Raspberry Pi Github Page](https://github.com/raspberrypi/documentation/blob/master/configuration/raspi-config.md). There will be more on using github later.
+
+To go back to the configuration window
+
+```
+
+sudo raspi-config
+
+```
 
 
 In addition to the command-line interface, Raspberry Pi computers can run a desktop environment. To start it type after logging in:
 
 ```
 startx
+
 ```
 
 ##Basic Linux operations  
 
 What is Linux?: Linux is an operating system, which is software that supports basic computer functions.
 Other examples of operating systems are Unix, Mac OS, Windows XP or Windows 7. You can do things like,
-make files, move files, copy files, make directories (folders) etc. etc. but instead of seeing icons like a Windows or Mac interface you would use text (the command line).
+make files, move files, copy files, make directories (folders) etc. etc. but instead of seeing icons like a
+Windows or Mac interface you would use text (the command line).
 
 
 From the desktop you can run a terminal program to continue to use the command-line interface (called LXTerminal).
@@ -94,7 +104,8 @@ If you need help on how/why to use a command the best thing to do is to google i
 
 ##Introduction to Github and other websites of interest.
 
-*  [Github](https://github.com/): Github is a way to code collaboratively, or to find code to jumpstart your project. Github + Jekyll + Markdown is also an easy way to set up a website for your projects. 
+*  [Github](https://github.com/): Github is a way to code collaboratively, or to find code to jumpstart your project.
+Github + Jekyll + Markdown is also an easy way to set up a website for your projects. 
 
 
 To clone a repository in LXterminal type:
@@ -108,7 +119,6 @@ git clone https://github.com/danforthcenter/outreach.git
 We won't be doing this today, but you can also add data to a repository if you've made changes.
 
 Four steps add data to a repository (that you have permissions to you can also do a 'pull' request that is asking for permission to push):
-
 1)  To add data to a repository: (make sure you are in right folder)
 
 ```
@@ -117,7 +127,6 @@ Four steps add data to a repository (that you have permissions to you can also d
 git add .
 
 ```
-
 2)  To commit data to a repository:
 
 ```
@@ -127,7 +136,7 @@ git commit -m "adding new data to this repository"
 
 ```
 
-3)  Pull the repository to merge your committed changes with the newest version of the repository.
+3)  Pull the repository so that you make sure you are adding data to the newest version of the repository.
 
 ```
 # make sure your version of the files are up to date before you try to add new things to the repository
@@ -143,52 +152,25 @@ git push
 
 ```
 
-Other important websites:
+Other important websites to check out:
 *  Thingiverse has lots of patterns to 3D print [here](https://www.thingiverse.com/)
 *  Raspberry Pis are computers but Arduino microcontrollers are also very useful for projects [here](https://www.arduino.cc/)
 *  OpenScad is a free program to design 3D objects [here](http://www.openscad.org/)
-*  More info on Github pages [here](https://pages.github.com/)
+*  More info on github pages [here](https://pages.github.com/)
 *  Jekyll is a tool to help develop your website with Github [here](https://help.github.com/articles/using-jekyll-with-pages/)
 
-##Pi passwords and backing up files
+##Pi passwords and backing up disk images
 
-The OS Raspbian comes with a single preconfigured user account (username: pi, password: raspberry). The pi user account is a privileged user, meaning that it has the capability of installing software, modifying the computer settings, etc. This can be a great way to learn how to administer Linux systems but for a classroom setting it could potentially lead to accidental changes that could ruin a project. There are two complementary ways to address this problem.
+**More from Noah**
 
-###Secure the pi user account and create a student user account
-1) Anyone on the internet can find the default username/password, so change the pi user password to something more secure.
+**Changing Pi Passwords**
 
-```
-passwd
+**Backing up files etc.**
 
-# Follow the instructions to set a new password
-```
+You should always have a backup of programs that you've spent significant time on. One method of doing that is to have a github
+repository with all of your important working scripts that you can download if something gets deleted or modified.
+Another method is to save a disk image.
 
-2) Create a new student account. By default new users are not privileged users. As the pi user you have access to administrator (root) capabilities using the "sudo" command.
-
-```
-sudo useradd -b /home -m -g users student
-
-# sudo lets the pi user execute the useradd command as the administrator
-# -b sets the base location of the student user home directory
-# -m tells useradd to create the home directory
-# -g users sets the student account group to users
-```
-
-3) Set the password for the student account
-
-```
-sudo passwd student
-
-# Follow the instructions to set a password for the student account.
-# This is the same command you used to set the pi user password
-# except that here you are using administrator privilege to set the
-# password for another account.
-```
-
-###Create a backup of your Raspberry Pi SD card
-Creating a periodic backup of your Raspberry Pi SD card is another way to protect your classroom projects. Additionally, a single backup can be used to clone one configured Raspberry Pi onto many Raspberry Pis. Restoring or cloning a Raspberry Pi is easy, so there is less risk that giving students full access to the Raspberry Pi will cause unrecoverable problems.
-
-The easiest way to create a backup is to mount the SD card onto a Mac or Windows computer with an SD card reader and use [ApplePi-Baker](http://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/) or a [Windows-based](http://www.tweaking4all.com/hardware/raspberry-pi/install-img-to-sd-card/#windows) card flashing utility to create an image of the Raspberry Pi SD card that you store on your Mac or Windows computer. You can use these utilities to restore your Raspberry Pi or clone the same OS image onto other Raspberry Pi SD cards.
 
 ##Introduction to Soldering
 
@@ -435,8 +417,9 @@ There are numerous sensors that are available for Raspberry Pi computers and als
 
 We will be using four different 'sensor' modules today  
 1)  Light panel: Bright Pi, more information [here](https://github.com/danforthcenter/outreach/tree/master/raspi_teachers_2015/Bright%20Pi%20assembly%20instructions)  
-2)  Temperature sensor: More information [here](https://www.adafruit.com/product/1893)  
-3)  Light sensor: More information [here](https://www.adafruit.com/products/439)
+2)  Temperature sensor: More information [here](https://www.adafruit.com/product/1893)
+3)  Temperature sensor #2 : More information [here](http://www.adafruit.com/products/393)
+5)  Light sensor: More information [here](https://www.adafruit.com/products/439)
 
 How to make your Raspberry pi more 'rugged'
 *  Weather proofing in a coffee can by Jim at fotosyn [here](http://www.fotosyn.com/simple-timelapse-camera-using-raspberry-pi-and-a-coffee-tin/)
@@ -488,202 +471,6 @@ If you had many images to process you would then use the "parallelization" scrip
 then saves the data to a database. We won't be doing that today but the instructions are [here](http://plantcv.danforthcenter.org/pages/documentation/function_docs/vis_tutorial.html).
 If you had run a full set of data (many plants growing over a period of time) you could then use R to analyze the data.
 
-##Use R to analyze phenotyping data
-
-R is a programming language that is used primarily for statistical analysis. To start R type:
-
-```
-R
-```
-
-You are now in an R console session. Import some R packages:
-
-```r
-library(ggplot2)
-library(lubridate)
-library(MASS)
-```
-
-Download a complete set of data for VIS images from the Danforth Center phenotyping system from Figshare. There were a total of 6,399 snapshots with VIS image data, but the download only includes the 6,207 snapshots that were successfully processed by PlantCV. Failed snapshots generally are those that lack a plant (empty pot controls, dead plants, etc.). The code below checks to see if the files exist and downloads them automatically if they do not.
-
-```r
-if (!file.exists('vis_snapshots_nocorrect.csv')) {
-  download.file('http://files.figshare.com/2084100/vis_snapshots_nocorrect.csv',
-                'vis_snapshots_nocorrect.csv')
-}
-```
-
-Read the data from the CSV file. (This is saving the information into memory)
-
-```r
-vis.data = read.table(file="vis_snapshots_nocorrect.csv", sep=",", header=TRUE)
-```
-
-```r
-
-#Now your data is saved to a variable named vis.data
-#The function head, lets you view the first 10 lines of that table.
-
-head(vis.data)
-
-```
-
-We need to format and label the data. The details in this section can be ignored for now.
-
-```r
-# Planting date
-planting_date = as.POSIXct("2013-11-26")
-
-# Add water treatment column coded in barcodes
-vis.data$treatment <- NA
-vis.data$treatment[grep("AA", vis.data$plant_id)] <- 100
-vis.data$treatment[grep("AB", vis.data$plant_id)] <- 0
-vis.data$treatment[grep("AC", vis.data$plant_id)] <- 16
-vis.data$treatment[grep("AD", vis.data$plant_id)] <- 33
-vis.data$treatment[grep("AE", vis.data$plant_id)] <- 66
-
-# Add plant genotype column coded in barcodes
-vis.data$genotype <- NA
-vis.data$genotype[grep("p1", vis.data$plant_id)] <- 'A10'
-vis.data$genotype[grep("p2", vis.data$plant_id)] <- 'B100'
-vis.data$genotype[grep("r1", vis.data$plant_id)] <- 'R20'
-vis.data$genotype[grep("r2", vis.data$plant_id)] <- 'R70'
-vis.data$genotype[grep("r3", vis.data$plant_id)] <- 'R98'
-vis.data$genotype[grep("r4", vis.data$plant_id)] <- 'R102'
-vis.data$genotype[grep("r5", vis.data$plant_id)] <- 'R128'
-vis.data$genotype[grep("r6", vis.data$plant_id)] <- 'R133'
-vis.data$genotype[grep("r7", vis.data$plant_id)] <- 'R161'
-vis.data$genotype[grep("r8", vis.data$plant_id)] <- 'R187'
-
-# Add genotype x treatment group column
-vis.data$group = paste(vis.data$genotype,'-',vis.data$treatment,sep='')
-
-# Add calendar-time data column using the Unix-time data
-vis.data$date = as.POSIXct(vis.data$datetime, origin = "1970-01-01")
-
-# Calculate days after planting from planting data
-vis.data$dap = as.numeric(vis.data$date - planting_date)
-
-# Convert VIS camera zoom units. LemnaTec VIS camera zoom units range from 1 to 6000, which correspond to 1 to 6X zoom
-zoom.lm = lm(zoom.camera ~ zoom, data=data.frame(zoom=c(1,6000), zoom.camera=c(1,6)))
-
-# VIS zoom correction
-# Download data for a reference object imaged at different zoom levels.
-if (!file.exists('zoom_calibration_data.txt')) {
-  download.file('http://files.figshare.com/2084101/zoom_calibration_data.txt',
-                'zoom_calibration_data.txt')
-}
-z.data = read.table(file="zoom_calibration_data.txt", sep="\t", header=TRUE)
-
-# Calculate px per cm
-z.data$px_cm = z.data$length_px / z.data$length_cm
-
-# Convert LemnaTec zoom units to camera zoom units
-z.data$zoom.camera = predict(object = zoom.lm, newdata=z.data)
-vis.data$zoom = vis.data$sv_zoom
-vis.data$sv.zoom.camera = predict(object = zoom.lm, newdata=vis.data)
-vis.data$zoom = vis.data$tv_zoom
-vis.data$tv.zoom.camera = predict(object = zoom.lm, newdata=vis.data)
-
-# Non-linear (exponential) model for area zoom correction
-area.coef = coef(nls(log(rel_area) ~ log(a * exp(b * zoom.camera)),
-                     z.data, start = c(a = 1, b = 0.01)))
-area.coef = data.frame(a=area.coef[1], b=area.coef[2])
-area.nls = nls(rel_area ~ a * exp(b * zoom.camera),
-               data = z.data, start=c(a=area.coef$a, b=area.coef$b))
-
-# Non-linear (polynomial) model for length zoom correction
-len.poly = lm(px_cm ~ zoom.camera + I(zoom.camera^2),
-              data=z.data[z.data$camera == 'VIS SV',])
-              
-# Create zoom-corrected VIS data frame
-vis.data.zoom = vis.data[,c('plant_id', 'datetime', 'treatment', 'genotype', 'group', 'date', 'dap', 'solidity', 'outlier')]
-vis.data$zoom.camera = vis.data$sv.zoom.camera
-vis.data$sv_rel_area = predict(object = area.nls, newdata = vis.data)
-vis.data$zoom.camera = vis.data$tv.zoom.camera
-vis.data$tv_rel_area = predict(object = area.nls, newdata = vis.data)
-
-# Calculate total zoom-corrected side-view and top-view area
-vis.data.zoom$sv_area = (vis.data$sv0_area / vis.data$sv_rel_area) + (vis.data$sv90_area / vis.data$sv_rel_area) + (vis.data$sv180_area / vis.data$sv_rel_area) + (vis.data$sv270_area / vis.data$sv_rel_area)
-vis.data.zoom$tv_area = vis.data$tv_area / vis.data$tv_rel_area
-
-# Calculate zoom-corrected lengths
-vis.data$zoom.camera = vis.data$sv.zoom.camera
-vis.data$px_cm = predict(object = len.poly, newdata=vis.data)
-vis.data.zoom$extent_x = vis.data$extent_x / vis.data$px_cm
-vis.data.zoom$extent_y = vis.data$extent_y / vis.data$px_cm
-vis.data.zoom$height_above_bound = vis.data$height_above_bound / vis.data$px_cm
-```
-
-## Model fresh-weight biomass from image data for Setaria
-
-Download data manually measured plant biomass data set (n = 41).
-
-```r
-if (!file.exists('manual_biomass_samples.csv')) {
-  download.file('http://files.figshare.com/2084103/manual_biomass_samples.csv',
-                'manual_biomass_samples.csv')
-}
-```
-
-Read the CSV file
-
-```r
-manual.st.data = read.table(file='manual_biomass_samples.csv', sep=",", header=TRUE, stringsAsFactors=FALSE)
-```
-
-Get data from the VIS data for each manual biomass sample
-```r
-st.data = merge(manual.st.data, vis.data.zoom, by = c('plant_id', 'datetime'))
-```
-
-A full model for fresh-weight biomass. Includes side-view area, top-view area and height.
-```r
-fw.full = lm(fresh_weight ~ sv_area * tv_area * height_above_bound, st.data)
-```
-
-Step-wise model selection with AIC.
-```r
-fw.step = stepAIC(fw.full, direction="both")
-summary(fw.step)
-```
-
-AIC model
-```r
-fw.aic = lm(fresh_weight ~ sv_area + tv_area + height_above_bound +
-              sv_area*height_above_bound, st.data)
-summary(fw.aic)
-```
-
-The AIC model contains tv_area and height which does not have a significant coefficient, test dropping.
-```r
-fw.red = lm(fresh_weight ~ sv_area, st.data)
-summary(fw.red)
-```
-
-Goodness of fit.
-```r
-anova(fw.aic, fw.red)
-```
-
-Side-view area model.
-```r
-sv.model = lm(fresh_weight ~ sv_area, st.data)
-summary(sv.model)
-```
-
-Plot SV model
-```r
-sv.model.plot = ggplot(st.data,aes(x=sv_area/1e5, y=fresh_weight)) +
-                       geom_smooth(method="lm", color="black", formula = y ~ x) +
-                       geom_point(size=2.5) +
-                       scale_x_continuous("Shoot and leaf area (x10^5 px)") +
-                       scale_y_continuous("Fresh-weight biomass (g)") +
-                       theme_bw() +
-                       theme(axis.title.x=element_text(face="bold"),
-                             axis.title.y=element_text(face="bold"))
-print(sv.model.plot)
-```
 
 ##Introduction to Scratch
 
