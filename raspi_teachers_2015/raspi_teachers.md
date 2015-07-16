@@ -458,10 +458,17 @@ sudo apt-get install imageJ
 ```
 After installation, imageJ will be installed in the Menu-->Graphics tab
 
-Open imageJ, and open a file (This can be any image, or the ImageJ/sample_image_ruler.jpg)
+Open imageJ, and open a file (This can be any image, or the ImageJ/sample_image_ruler.jpg')
 
 An example of how to measure length and angles can be found [here](https://www.youtube.com/watch?v=8IrTXUDqmXI)
 
+To measure length:  
+1. Use the line tool to draw a known length (use 1 cm in example)  
+2. Select Analyze--> Measure  
+3. Select Analyze--> Set Scale  
+4. Set known distance to 1, unit of length to cm  
+5. Draw line over stem in picture  
+6. Select Analyze--> Measure  
 
 
 **Process images with PlantCV**
