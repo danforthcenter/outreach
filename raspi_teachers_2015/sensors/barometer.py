@@ -59,7 +59,6 @@ p_decimal = ((p_lsb & 0x30) >> 4)/4.0
 celsius = t_msb + (t_lsb >> 4)/16.0
 fahrenheit = (celsius * 9)/5 + 32
 
-print "Pressure and Temperature at "+time.strftime('%m/%d/%Y %H:%M:%S%z')
-print str(pressure+p_decimal)+" Pa"
-print str(celsius)+deg+"C"
-print str(fahrenheit)+deg+"F"
+print "Pressure (Pa)\tTemperature (C)\tTemperature (F)\tDate-time\n"
+print str(pressure+p_decimal) + '\t' + str(celsius) + '\t' + str(fahrenheit) + '\t' + time.strftime('%Y-%m-%d %H:%M:%S')
+

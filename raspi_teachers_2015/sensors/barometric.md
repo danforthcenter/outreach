@@ -40,3 +40,26 @@ Check the I2C connection:
 ```
 sudo i2cdetect -y 1
 ```
+
+The barometer should appear at address 60:
+
+```
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: 60 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --
+```
+
+Use the script modified from Ciaduck to get data from the sensor:
+
+```
+python /home/pi/outreach/raspi_teachers_2015/sensors/barometer.py
+
+# Example output:
+
+```
