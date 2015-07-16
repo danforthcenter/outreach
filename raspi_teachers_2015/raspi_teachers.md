@@ -315,9 +315,28 @@ crontab.
 
 ## Use cron to take images on a schedule (time-lapse)
 
-Crontab is an easy way to schedule repeating tasks so it can be used as another way to do time-lapse imaging, like time-lapse imaging.
+Crontab is an easy way to schedule repeating tasks so it can be used as another way to do time-lapse imaging, like time-lapse imaging.  
+
+First we will disable the red light on your camera  
 
 First let's make another folder so that we don't confuse it with the first timelapse
+=======
+```
+#This opens up the config.txt file in using the leafpad text editor program  
+
+sudo leafpad /boot/config.txt  
+
+#Then add the following to the end of the file to diable 
+
+disable_camera_led=1
+
+#Then save and exit
+```  
+Now make a folder called timelapse and open crontab in a text editor
+
+```
+
+#let's make another folder so that we don't confuse it with the first timelapse
 
 ```
 mkdir /home/pi/timelapse
@@ -357,6 +376,7 @@ Now we need to restart the cron service to make sure the changes take effect. On
 
 ```
 sudo service cron restart
+
 ```
 
 Can I test my commands before putting them into crontab?
@@ -465,6 +485,33 @@ We built PlantCV (Plant Computer Vision) to process plant images specifically, b
 *  PlantCV documentation and information is located [here](http://plantcv.danforthcenter.org/)
 *  R is a programming language that is used for statistical analysis, more information [here](http://www.r-project.org/)
 *  R studio is a free graphical user interface (GUI) to make running R code easier. More info [here](https://www.rstudio.com/)
+
+**Process images with ImageJ**
+
+[ImageJ](imagej.nih.gov/ij/) is a free image quantification software developed by the National Institutes of Health (NIH). Go [here](http://imagej.nih.gov/ij/docs/guide/index.html) for detailed instructions.
+
+Install imageJ on your Raspberry Pi using the following commands:  
+
+```
+sudo apt-get update	
+```  
+
+```
+sudo apt-get install imageJ
+```
+After installation, imageJ will be installed in the Menu-->Graphics tab
+
+Open imageJ, and open a file (This can be any image, or the ImageJ/sample_image_ruler.jpg')
+
+An example of how to measure length and angles can be found [here](https://www.youtube.com/watch?v=8IrTXUDqmXI)
+
+To measure length:  
+1. Use the line tool to draw a known length (use 1 cm in example)  
+2. Select Analyze--> Measure  
+3. Select Analyze--> Set Scale  
+4. Set known distance to 1, unit of length to cm  
+5. Draw line over stem in picture  
+6. Select Analyze--> Measure  
 
 **Process images with PlantCV**
 
