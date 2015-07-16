@@ -61,5 +61,25 @@ Use the script modified from Ciaduck to get data from the sensor:
 python /home/pi/outreach/raspi_teachers_2015/sensors/barometer.py
 
 # Example output:
+#Pressure (Pa)	Temperature (C)	Temperature (F)	Date-time
 
+#99633.75	24.1875	75.5375	2015-07-15 22:16:52
+```
+
+To log barometer data over time using cron:
+
+Create an output file for the data and note where it is (let's assume it's in the /home/pi folder for now).
+
+```
+# go home
+
+cd ~
+
+# Create a file with the column headers separated by tabs
+
+echo $'Pressure (Pa)\tTemperature (C)\tTemperature (F)\tDate-time' > barometer.data.txt
+
+# Add the script to cron
+
+sudo echo '0 * * * * pi python /home/pi/outreach/raspi_teachers_2015/sensors/barometer.py | tail -1 >> /home/pi/barometer.data.txt' >> /etc/crontab
 ```
