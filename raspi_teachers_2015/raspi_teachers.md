@@ -317,10 +317,8 @@ crontab.
 
 Crontab is an easy way to schedule repeating tasks so it can be used as another way to do time-lapse imaging, like time-lapse imaging.  
 
-First we will disable the red light on your camera  
+# First we will disable the red light on your camera
 
-First let's make another folder so that we don't confuse it with the first timelapse
-=======
 ```
 #This opens up the config.txt file in using the leafpad text editor program  
 
@@ -331,12 +329,9 @@ sudo leafpad /boot/config.txt
 disable_camera_led=1
 
 #Then save and exit
-```  
+``` 
+
 Now make a folder called timelapse and open crontab in a text editor
-
-```
-
-#let's make another folder so that we don't confuse it with the first timelapse
 
 ```
 mkdir /home/pi/timelapse
@@ -346,11 +341,8 @@ Open up the crontab file using the leafpad text editor program. We need to have 
 
 ```
 sudo leafpad /etc/crontab
-```
 
 Crontab file format:
-
-```
 # Example of job definition:
 # .---------------- minute (0 - 59)
 # |  .------------- hour (0 - 23)
