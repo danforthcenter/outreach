@@ -293,10 +293,26 @@ crontab.
 
 ## Use cron to take images on a schedule (time-lapse)
 
-Crontab is an easy way to schedule repeating tasks so it can be used as another way to do time-lapse imaging, like time-lapse imaging.
+Crontab is an easy way to schedule repeating tasks so it can be used as another way to do time-lapse imaging, like time-lapse imaging.  
+
+First we will disable the red light on your camera  
 
 ```
-#First let's make another folder so that we don't confuse it with the first timelapse
+#This opens up the config.txt file in using the leafpad text editor program  
+
+sudo leafpad /boot/config.txt  
+
+#Then add the following to the end of the file to diable 
+
+disable_camera_led=1
+
+#Then save and exit
+```  
+Now make a folder called timelapse and open crontab in a text editor
+
+```
+
+#let's make another folder so that we don't confuse it with the first timelapse
 
 mkdir /home/pi/timelapse2
 
@@ -329,11 +345,12 @@ add the following line to the cron file (you should see a list of commands that 
 
 ```
 
-now we need to restart the cron to make sure the changes take effect. On the command line type
+now we need to restart the cron and the pi to make sure the changes take effect. On the command line type
 
 ```
+sudo service cron restart  
 
-sudo service cron restart
+sudo reboot
 
 ```
 
@@ -469,7 +486,6 @@ To measure length:
 4. Set known distance to 1, unit of length to cm  
 5. Draw line over stem in picture  
 6. Select Analyze--> Measure  
-
 
 **Process images with PlantCV**
 
