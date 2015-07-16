@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/usr/bin/python
 
 # This script is modified from Ciaduck: http://ciaduck.blogspot.com/2014/12/mpl3115a2-sensor-with-raspberry-pi.html
 
