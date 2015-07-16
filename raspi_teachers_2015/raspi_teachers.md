@@ -443,6 +443,27 @@ We built PlantCV (Plant Computer Vision) to process plant images specifically, b
 *  R is a programming language that is used for statistical analysis, more information [here](http://www.r-project.org/)
 *  R studio is a free graphical user interface (GUI) to make running R code easier. More info [here](https://www.rstudio.com/)
 
+**Process images with ImageJ**
+
+[ImageJ](imagej.nih.gov/ij/) is a free image quantification software developed by the National Institutes of Health (NIH). Go [here](http://imagej.nih.gov/ij/docs/guide/index.html) for detailed instructions.
+
+Install imageJ on your Raspberry Pi using the following commands:  
+
+```
+sudo apt-get update	
+```  
+
+```
+sudo apt-get install imageJ
+```
+After installation, imageJ will be installed in the Menu-->Graphics tab
+
+Open imageJ, and open a file (This can be any image, or the ImageJ/sample_image_ruler.jpg)
+
+An example of how to measure length and angles can be found [here](https://www.youtube.com/watch?v=8IrTXUDqmXI)
+
+
+
 **Process images with PlantCV**
 
 [PlantCV](http://plantcv.danforthcenter.org/) is software we wrote at the Danforth Center to extract biologically meaningful information from images of plants. Go to [here](http://plantcv.danforthcenter.org/pages/documentation/function_docs/vis_tutorial.html) for detailed instructions.
