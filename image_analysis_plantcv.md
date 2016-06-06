@@ -25,6 +25,18 @@ Then clone PlantCV to your home folder:
 git clone https://github.com/danforthcenter/plantcv.git
 ```
 
+Then enter the plantcv folder
+
+```
+cd plantcv
+```
+
+We need the latest version of PlantCV (still in development), so checkout the development branch:
+
+```
+git checkout dev
+```
+
 # Process images with PlantCV
 
 [PlantCV](http://plantcv.danforthcenter.org/) is software we wrote at the Danforth Center to extract biologically meaningful information from images of plants. Go to [here](http://plantcv.danforthcenter.org/pages/documentation/function_docs/vis_tutorial.html) for detailed instructions.
