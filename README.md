@@ -10,7 +10,7 @@ The reu_2016 branch contains the materials from the Danforth Center REU 2016 Phe
 
 **10:00 AM-10:15 AM**: Break
 
-**10:15 AM-11:00 AM**: Introduction Linux (hands-on)
+**10:15 AM-11:00 AM**: Introduction to Linux (hands-on)
 
 + Introduction to the Bioinformatics Core Facility
 + Introduction to Linux
