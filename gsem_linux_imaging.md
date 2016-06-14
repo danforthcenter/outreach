@@ -13,7 +13,8 @@ Other examples of operating systems are Unix, Mac OS, Windows XP or Windows 7. Y
 make files, move files, copy files, make directories (folders) etc. etc. but instead of seeing icons like a
 Windows or Mac interface you would use text (the command line).
 
-In addition to the command-line interface, Raspberry Pi computers can run a desktop environment. To start it type after logging in:
+Your computer should boot to a desktop with Raspberry on it, if it just looks like a black screen with text you might be in the command line interface:
+To go to the desktop environment from the command line interface, type after logging in:
 
 ```
 startx
@@ -82,12 +83,15 @@ To take a picture, see it, and save it with the name *image.jpg* use the followi
 
 # this command will take a picture but it will put it in whatever working directory (folder) you are in
 # the -o tells the program what to name the image and also where to put it, if it is just the name it puts the image in whatever folder you are currently in.
+
 raspistill -o image1.jpg
 
 # To see where you've save the image (what folder you are currently in) type
+
 pwd
 
 # To see the names of the files in your current folder type
+
 ls -l
 
 ```
@@ -135,6 +139,7 @@ To take a picture, see it, and save it with the time stamp in front of the name 
 
 # if you add the timestamp to the name you can use the same command over and over again (gives the imaage a new name and doesn't overwrite)
 # the name of the image below would include the current year, month, day, hour, min, and second
+
 raspistill -o /home/pi/images/$(date +"%Y-%m-%d_%H:\%M:%S")_images.jpg
 
 # now press the up arrow, the command you just ran should show up, take another picture.
@@ -193,7 +198,11 @@ add the following line to the cron file (you should see a list of commands that 
 ```
 #this tells the command to run every min of every hour every day of the month every day of the week.
 
-*/1 * * * * pi /usr/bin/raspistill -o /home/pi/timelapse2/$(date +"\%Y-\%m-\%d_\%H:\%M:\%S")_timelapse.jpg
+* * * * * pi /usr/bin/raspistill -o /home/pi/timelapse2/$(date +"\%Y-\%m-\%d_\%H:\%M:\%S")_timelapse.jpg
+
+# That might be too many pictures, so let's take a picture every 10 minutes
+
+*/10 * * * * pi /usr/bin/raspistill -o /home/pi/timelapse2/$(date +"\%Y-\%m-\%d_\%H:\%M:\%S")_timelapse.jpg
 
 #save the file and close it
 
@@ -227,8 +236,6 @@ cd /home/pi/timelapse2/
 
 ls *.jpg > stills.txt
 
-awk 'NR%2==0' stills.txt > stills_even.txt
-
 ```  
 
 now we can assemble the files into a time-lapse movie  
@@ -240,10 +247,10 @@ now we can assemble the files into a time-lapse movie
 # -o tell the program what to name your file
 # -mf tells the program what file format and the number of frames per second that you want, as well as the file with all the image names
 
-mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:aspect=16/9:vbitrate=8000000 -vf scale=1920:1080 -o timelapse.avi -mf type=jpeg:fps=24 mf://@stills_even.txt
+mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:aspect=16/9:vbitrate=8000000 -vf scale=1920:1080 -o timelapse.avi -mf type=jpeg:fps=24 mf://@stills.txt
 
 #if you need to flip your images
-mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:aspect=16/9:vbitrate=8000000 -vf scale=1920:1080 -flip -o timelapse.avi -mf type=jpeg:fps=24 mf://@stills_even.txt
+mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:aspect=16/9:vbitrate=8000000 -vf scale=1920:1080 -flip -o timelapse.avi -mf type=jpeg:fps=24 mf://@stills.txt
 
 ```
 

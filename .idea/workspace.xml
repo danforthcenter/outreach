@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="048c2b84-ff69-40b2-8071-ac75e5fbdb7e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gsem_2016.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gsem_worksheets_2016.md" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gsem_linux_imaging.md" afterPath="$PROJECT_DIR$/gsem_linux_imaging.md" />
     </list>
     <ignored path="outreach.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,12 +23,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="gsem_schedule_2016.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gsem_schedule_2016.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gsem_schedule_2016.md">
-          <provider editor-type-id="MarkdownFxPreviewEditor">
+          <provider selected="true" editor-type-id="MarkdownFxPreviewEditor">
             <state />
           </provider>
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+          <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="FIRST">
               <first_editor relative-caret-position="0">
                 <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -40,15 +39,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gsem_linux_imaging.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="gsem_linux_imaging.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gsem_linux_imaging.md">
           <provider editor-type-id="MarkdownFxPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <first_editor relative-caret-position="-314">
+                <caret line="252" column="156" selection-start-line="252" selection-start-column="156" selection-end-line="252" selection-end-column="156" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -97,11 +96,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/gsem_linux-imaging.md" />
+        <option value="$PROJECT_DIR$/gsem_schedule_2016.md" />
+        <option value="$PROJECT_DIR$/gsem_linux_imaging.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="y" value="48" />
     <option name="width" value="1280" />
     <option name="height" value="697" />
   </component>
@@ -311,7 +312,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="697" extended-state="6" />
+    <frame x="0" y="48" width="1280" height="697" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -391,11 +392,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gsem_linux_imaging.md">
-      <provider editor-type-id="MarkdownFxPreviewEditor">
+    <entry file="file://$PROJECT_DIR$/gsem_schedule_2016.md">
+      <provider selected="true" editor-type-id="MarkdownFxPreviewEditor">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -433,14 +434,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gsem_schedule_2016.md">
+    <entry file="file://$PROJECT_DIR$/gsem_linux_imaging.md">
       <provider editor-type-id="MarkdownFxPreviewEditor">
         <state />
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <first_editor relative-caret-position="-314">
+            <caret line="252" column="156" selection-start-line="252" selection-start-column="156" selection-end-line="252" selection-end-column="156" />
             <folding />
           </first_editor>
           <second_editor />
