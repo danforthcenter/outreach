@@ -6,9 +6,26 @@
 # Program takes a picture with attached camera and saves to computer
 ############################################################
 
+import argparse
 import json
 import paramiko
+import os
 from subprocess import call
+
+
+def options():
+    """
+
+    :return args: argparse object
+    """
+
+    parser = argparse.ArgumentParser(description='Phenotyping image capture and image processing demo.',
+                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument("-c", "--conf", help="JSON configuration file.", default="config.json")
+    parser.add_argument("-d", "--debug", help="Activate debugging.", action="store_true")
+    args = parser.parse_args()
+
+    return args
 
 
 def main():
@@ -17,8 +34,12 @@ def main():
     :return:
     """
 
+    # Parse command-line flags
+    args = options()
+
     # Read the database connection configuration file
-    config = open("config.json", 'rU')
+    config = open(args.conf, 'rU')
+
     # Load the JSON configuration data
     conf = json.load(config)
 
@@ -28,22 +49,28 @@ def main():
     ssh.connect(conf['hostname'], username=conf['username'], password=conf['password'])
     sftp = ssh.open_sftp()
 
-    # use gphoto2 --auto-detect to check camera is still attached
-    call(["gphoto2", "--auto-detect"])
-
-    print(" ")
-    print("taking picture")
-
     filename = "image.jpg"
 
-    # Take a picture
-    camera_capture(filename)
+    if args.debug:
+        filename = "seeds.jpg"
+    else:
+        # use gphoto2 --auto-detect to check camera is still attached
+        call(["gphoto2", "--auto-detect"])
+
+        print(" ")
+        print("taking picture")
+
+        # Take a picture
+        camera_capture(filename)
 
     # Copy picture to server
     try:
-        sftp.put(conf['path'], filename)
+        sftp.put(filename, os.path.join(conf['path'], filename))
     except IOError as e:
-        print("I/O error({0}): {1}. Offending file: {2}".format(e.errno, e.strerror, conf['path']))
+        print("I/O error({0}): {1}. Offending file: {2}".format(e.errno, e.strerror, filename))
+
+    sftp.close()
+    ssh.close()
 
 
 def camera_capture(filename):
