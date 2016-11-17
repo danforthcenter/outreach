@@ -25,10 +25,10 @@ def options():
     parser.add_argument("-c", "--conf", help="JSON configuration file.", default="config.json")
     parser.add_argument("-d", "--debug", help="Activate debugging.", action="store_true")
     parser.add_argument("-e", "--exp",
-                        help="Experiment. Options = arabidopsis, indigo, cassava, quinoa", default="quinoa")
+                        help="Experiment. Options = arabidopsis, indigo, cassava, sorghum", default="sorghum")
     args = parser.parse_args()
 
-    if args.exp not in ['arabidopsis', 'indigo', 'cassava', 'quinoa']:
+    if args.exp not in ['arabidopsis', 'indigo', 'cassava', 'sorghum']:
         print("{0} is not a valid experiment\n".format(args.exp), file=sys.stderr)
         sys.exit(1)
 
@@ -55,6 +55,12 @@ def main():
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     ssh.connect(conf['hostname'], username=conf['username'], password=conf['password'])
     sftp = ssh.open_sftp()
+
+    # stdin_, stdout_, stderr_ = ssh.exec_command("export PYTHONPATH=/home/nfahlgren/programs/plantcv;python -c 'import plantcv'")
+    # stderr_.channel.recv_exit_status()
+    # lines = stderr_.readlines()
+    # for line in lines:
+    #     print(line)
 
     filename = args.exp + ".jpg"
 
