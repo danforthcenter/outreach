@@ -56,12 +56,6 @@ def main():
     ssh.connect(conf['hostname'], username=conf['username'], password=conf['password'])
     sftp = ssh.open_sftp()
 
-    # stdin_, stdout_, stderr_ = ssh.exec_command("export PYTHONPATH=/home/nfahlgren/programs/plantcv;python -c 'import plantcv'")
-    # stderr_.channel.recv_exit_status()
-    # lines = stderr_.readlines()
-    # for line in lines:
-    #     print(line)
-
     filename = args.exp + ".jpg"
 
     if args.debug:
@@ -71,16 +65,26 @@ def main():
         call(["gphoto2", "--auto-detect"])
 
         print(" ")
-        print("taking picture")
+        print("Taking picture")
 
         # Take a picture
         camera_capture(filename)
 
     # Copy picture to server
+    print("Transferring image to server")
     try:
         sftp.put(filename, os.path.join(conf['path'], filename))
     except IOError as e:
         print("I/O error({0}): {1}. Offending file: {2}".format(e.errno, e.strerror, filename))
+
+    print("Analyzing image")
+    cmds = ["export PYTHONPATH=~/plantcv",
+            "python -c 'import plantcv'"]
+    stdin_, stdout_, stderr_ = ssh.exec_command(';'.join(map(str, cmds)))
+    stderr_.channel.recv_exit_status()
+    lines = stderr_.readlines()
+    for line in lines:
+        print(line)
 
     sftp.close()
     ssh.close()
