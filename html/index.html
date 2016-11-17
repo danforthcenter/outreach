@@ -8,9 +8,15 @@
             if (source === "indigo") {
                 document.getElementById("left-img").src = "indigo-out_shapes.jpg";
                 document.getElementById("right-img").src = "indigo_v_pseudo_on_img.jpg";
-            } else if (source == "arabidopsis") {
+            } else if (source === "arabidopsis") {
                 document.getElementById("left-img").src = "arabidopsis-out_shapes.jpg";
                 document.getElementById("right-img").src = "arabidopsis_v_pseudo_on_img.jpg";
+            } else if (source === "cassava") {
+                document.getElementById("left-img").src = "cassava-out_shapes.jpg";
+                document.getElementById("right-img").src = "cassava_v_pseudo_on_img.jpg";
+            } else if (source === "sorghum") {
+                document.getElementById("left-img").src = "sorghum-seed-maxseed.jpg";
+                document.getElementById("right-img").src = "sorghum-seed-seed-confetti.jpg";
             }
         }
     </script>
@@ -21,20 +27,12 @@
             <td style="width: 50%"><img id="left-img" src="indigo-out_shapes.jpg", style="max-width: 100%"></td>
             <td style="width: 50%"><img id="right-img" src="indigo_v_pseudo_on_img.jpg", style="max-width: 100%"></td>
         </tr>
-        <tr>
-            <td style="width: 25%">
-                <input type="button" value="Arabidopsis" onclick="relaod_imgs('arabidopsis')">
-            </td>
-            <td style="width: 25%">
-                <input type="button" value="Cassava" onclick="relaod_imgs('cassava')">
-            </td>
-            <td style="width: 25%">
-                <input type="button" id="indigo" value="Indigo" onclick="relaod_imgs('indigo')">
-            </td>
-            <td style="width: 25%">
-                <input type="button" id="indigo" value="Sorghum" onclick="relaod_imgs('sorghum')">
-            </td>
-        </tr>
     </table>
+    <div>
+        <input type="button" value="Arabidopsis" onclick="relaod_imgs('arabidopsis')">
+        <input type="button" value="Cassava" onclick="relaod_imgs('cassava')">
+        <input type="button" value="Indigo" onclick="relaod_imgs('indigo')">
+        <input type="button" value="Sorghum" onclick="relaod_imgs('sorghum')">
+    </div>
 </body>
 </html>
