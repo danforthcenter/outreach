@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 ############################################################
 # Based on code from Andy Lin and Monica Tessman
@@ -29,7 +29,7 @@ def options():
     args = parser.parse_args()
 
     if args.exp not in ['arabidopsis', 'indigo', 'cassava', 'sorghum']:
-        print("{0} is not a valid experiment\n".format(args.exp), file=sys.stderr)
+        print("{0} is not a valid experiment\n".format(args.exp))
         sys.exit(1)
 
     return args
