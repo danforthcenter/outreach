@@ -89,7 +89,7 @@ def main():
         cmds.append(os.path.join(conf['git-path'], "arabidopsis-phenotyping.py " + " ".join(map(str, opts))))
     elif args.exp == 'cassava':
         opts = ["--image", os.path.join(conf['www-path'], filename), "--outdir", conf["www-path"]]
-        cmds.append(os.path.join(conf['git-path'], "cassava-phenotyping.py" + " ".join(map(str, opts))))
+        cmds.append(os.path.join(conf['git-path'], "cassava-phenotyping.py " + " ".join(map(str, opts))))
     elif args.exp == 'sorghum-seed':
         opts = ["--image", os.path.join(conf['www-path'], filename), "--outdir", conf["www-path"],
                 "--mask", os.path.join(conf["git-path"], "sample-data/seed-mask.jpg")]
