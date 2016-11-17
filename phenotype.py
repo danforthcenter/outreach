@@ -10,6 +10,7 @@ import argparse
 import json
 import paramiko
 import os
+import sys
 from subprocess import call
 
 
@@ -23,7 +24,13 @@ def options():
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("-c", "--conf", help="JSON configuration file.", default="config.json")
     parser.add_argument("-d", "--debug", help="Activate debugging.", action="store_true")
+    parser.add_argument("-e", "--exp",
+                        help="Experiment. Options = arabidopsis, indigo, cassava, quinoa", default="quinoa")
     args = parser.parse_args()
+
+    if args.exp not in ['arabidopsis', 'indigo', 'cassava', 'quinoa']:
+        print("{0} is not a valid experiment\n".format(args.exp), file=sys.stderr)
+        sys.exit(1)
 
     return args
 
@@ -49,7 +56,7 @@ def main():
     ssh.connect(conf['hostname'], username=conf['username'], password=conf['password'])
     sftp = ssh.open_sftp()
 
-    filename = "image.jpg"
+    filename = args.exp + ".jpg"
 
     if args.debug:
         filename = "seeds.jpg"
