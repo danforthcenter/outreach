@@ -103,6 +103,8 @@ def main():
 
     sftp.close()
     ssh.close()
+    if args.debug is False:
+        os.remove(filename)
 
 
 def camera_capture(filename):

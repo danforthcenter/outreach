@@ -5,18 +5,19 @@
     <title>Indigo</title>
     <script type="text/javascript">
         function relaod_imgs(source) {
+            rnum = Math.floor((Math.random() * 1000) + 1);
             if (source === "indigo") {
-                document.getElementById("left-img").src = "indigo-out_shapes.jpg";
-                document.getElementById("right-img").src = "indigo_v_pseudo_on_img.jpg";
+                document.getElementById("left-img").src = "indigo-out_shapes.jpg?dummy=" + rnum;
+                document.getElementById("right-img").src = "indigo_v_pseudo_on_img.jpg?dummy=" + rnum;
             } else if (source === "arabidopsis") {
-                document.getElementById("left-img").src = "arabidopsis-out_shapes.jpg";
-                document.getElementById("right-img").src = "arabidopsis_v_pseudo_on_img.jpg";
+                document.getElementById("left-img").src = "arabidopsis-out_shapes.jpg?dummy=" + rnum;
+                document.getElementById("right-img").src = "arabidopsis_v_pseudo_on_img.jpg?dummy=" + rnum;
             } else if (source === "cassava") {
-                document.getElementById("left-img").src = "cassava-out_shapes.jpg";
-                document.getElementById("right-img").src = "cassava_v_pseudo_on_img.jpg";
+                document.getElementById("left-img").src = "cassava-out_shapes.jpg?dummy=" + rnum;
+                document.getElementById("right-img").src = "cassava_v_pseudo_on_img.jpg?dummy=" + rnum;
             } else if (source === "sorghum") {
-                document.getElementById("left-img").src = "sorghum-seed-maxseed.jpg";
-                document.getElementById("right-img").src = "sorghum-seed-seed-confetti.jpg";
+                document.getElementById("left-img").src = "sorghum-seed-maxseed.jpg?dummy=" + rnum;
+                document.getElementById("right-img").src = "sorghum-seed-seed-confetti.jpg?dummy=" + rnum;
             }
         }
     </script>
