@@ -1,11 +1,9 @@
-# outreach
-Repository for Outreach Activities at DDPSC
+# DDPSC summer intern phenotyping workshop
 
-The materials for each workshop are contained in separate branches so that a user can specifically clone a branch for an individual workshop.
+## Schedule
 
-# Workshop branches
-
-- reu_2015: NSF REU phenotyping/maker workshop (2015)
-- gsem_2015: Girl Scouts of Eastern Missouri Raspberry Pi/plant imaging workshop (2015)
-- raspi_teachers_2015: Raspberry Pi teachers workshop (2015)
-- csiw_2015: Missouri EPSCoR Computer Science Institute for Women (2015)
+- **9:00am**:  Overview and introduction to phenotyping and Raspberry Pi
+- **10:30am**: Tour of phenotyping facilities (including Bellwether Facility, Raspberry Pi greenhouse and growth chambers, and x-ray CT)
+- **11:30am**: Break for lunch; consider attending the optional Thursday Mentoring Seminar Series in the Theater
+- **1:00pm**: Hands-on data collection and image analysis for phenotyping
+- **5:00pm**: Wrap up

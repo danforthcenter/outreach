@@ -2,6 +2,16 @@
 
 The Raspberry Pi camera module is a 5 megapixel (8 megapixel are now available), fixed-focus camera add-on for the Raspberry Pi. Each of your Raspberry Pi computers has a camera module installed. Your camera module is the Pi NoIR model (the infrared filter has been removed).
 
+## Log into a Raspberry Pi
+
+Use secure shell (ssh) to log into a Raspberry Pi computer remotely.
+
+```
+ssh pi@<ip address>
+```
+
+We will also log into the Raspberry Pi using Cyberduck so we can view images after we take them.
+
 ## Take a picture
 
 To take a picture, see it, and save it with the name *image.jpg* use the following command:
